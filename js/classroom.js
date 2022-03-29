@@ -20,11 +20,9 @@ classroomOpener.addEventListener("click", () =>
 );
 
 function speechBubbleHover() {
-
   speechBubble.style.opacity = 100;
-  console.log("DET FUNGERER FOR FAEN");
-    professorSnapeImg.addEventListener("mouseleave", speechBubbleLeave)
+  professorSnapeImg.addEventListener("mouseleave", speechBubbleLeave);
 }
 function speechBubbleLeave() {
-    speechBubble.style.opacity =0;
+  speechBubble.style.opacity = 0;
 }
