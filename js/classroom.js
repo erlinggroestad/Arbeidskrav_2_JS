@@ -6,11 +6,12 @@ async function getHpApi(url) {
   return jsonData;
 }
 
-const severusInfo = document.createElement("button");
-severusInfo.innerText = "Severus Snape info";
-document.body.append(severusInfo);
-severusInfo.addEventListener("click", () =>
+const classroomOpener = document.createElement("button");
+classroomOpener.innerText = "Open classroom";
+document.body.append(classroomOpener);
+classroomOpener.addEventListener("click", () =>
   getHpApi("http://hp-api.herokuapp.com/api/characters").then((jsonData) => {
     console.log(jsonData[7]);
+    document.getElementById("professor-snape-img").src = jsonData[7].image;
   })
 );
