@@ -5,3 +5,9 @@
 .professor__snape__img:hover{
 opacity: 90%;
 }
+.speech__bubble{
+    height: 200px;
+    width: 200px;
+    border: solid;
+    opacity: 0;
+}
