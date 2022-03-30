@@ -31,3 +31,12 @@ function speechBubbleHover() {
 function speechBubbleLeave() {
   speechBubble.style.opacity = 0;
 }
+
+// End severus snape start on students
+
+let startButton = document.getElementById("start-button");
+startButton.innerHTML = "Start class";
+startButton.addEventListener("click", showStudents);
+function showStudents() {
+  console.log("11 random studens appears")
+}
