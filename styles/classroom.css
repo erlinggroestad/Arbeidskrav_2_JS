@@ -6,8 +6,8 @@
 opacity: 90%;
 }
 .speech__bubble{
-    height: 200px;
-    width: 200px;
+    height: 20px;
+    width: 100px;
     border: solid;
     opacity: 0;
 }
