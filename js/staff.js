@@ -15,7 +15,7 @@ fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
       let text = "";
 
       for (let i = 0; i < jsonData.length; i++) {
-        text += `<li>Name: ${jsonData.name} <br> House:${jsonData.house} <br> <br></li>`;
+        text += `<li>Name: ${jsonData[i].name} <br> House:${jsonData[i].house} <br> <br></li>`;
       }
       document.getElementById("test").innerHTML = text;
       console.log(jsonData.lengt);
