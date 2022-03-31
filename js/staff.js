@@ -3,6 +3,7 @@ async function getStaffApi(url) {
   let jsonData = await infoGather.json();
   return jsonData;
 }
+
 fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
   getStaffApi("http://hp-api.herokuapp.com/api/characters/staff").then(
     (jsonData) => {
@@ -10,6 +11,14 @@ fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
       document.getElementById("staff-name").innerHTML = jsonData[0].name;
       document.getElementById("staff-house").innerHTML = jsonData[0].house;
       document.getElementById("staff-img").src = jsonData[0].image;
+
+      let text = "";
+
+      for (let i = 0; i < jsonData.length; i++) {
+        text += `<li>Name: ${jsonData.name} <br> House:${jsonData.house} <br> <br></li>`;
+      }
+      document.getElementById("test").innerHTML = text;
+      console.log(jsonData.lengt);
     }
   )
 );
