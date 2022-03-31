@@ -15,10 +15,13 @@ fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
       let text = "";
 
       for (let i = 0; i < jsonData.length; i++) {
-        text += `<li>Name: ${jsonData[i].name} <br> House:${jsonData[i].house} <br> <br></li>`;
+        text += `<li>Name: ${jsonData[i].name} <br> House:${jsonData[i].house} <br>${jsonData[i].image} <br><br> </li>`;
       }
       document.getElementById("test").innerHTML = text;
-      console.log(jsonData.lengt);
+
+      if (jsonData.house === "") {
+      } else {
+      }
     }
   )
 );
