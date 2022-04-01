@@ -10,7 +10,7 @@ fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
       console.log(jsonData);
 
       let staffCardsInfo = "";
-      let noHouse = "hei";
+    
 
       for (let i = 0; i < jsonData.length; i++) {
         staffCardsInfo += `<li>
