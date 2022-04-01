@@ -10,13 +10,13 @@ fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
       console.log(jsonData);
 
       let staffCardsInfo = "";
-    
 
       for (let i = 0; i < jsonData.length; i++) {
         staffCardsInfo += `<li>
-         <img id="staff-img" src="${jsonData[i].image}" alt=""   onerror="this.src='/images/wizard.png'" /> <br>
+         <img id="staff-img" src="${jsonData[i].image}" alt=""   
+         onerror="this.src='/images/wizard.png'" /> <br>
          Name: ${jsonData[i].name} <br>
-         House:${jsonData[i].house} </li>`;
+         House: ${jsonData[i].house} </li>`;
       }
       document.getElementById("cards").innerHTML = staffCardsInfo;
 
