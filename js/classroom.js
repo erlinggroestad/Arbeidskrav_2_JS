@@ -36,7 +36,17 @@ function speechBubbleLeave() {
 
 let startButton = document.getElementById("start-button");
 startButton.innerHTML = "Start class";
-startButton.addEventListener("click", showStudents);
-function showStudents() {
-  console.log("11 random studens appears")
+
+async function showStudents(url) {
+  const infoGather = await fetch(url);
+  const jsonData = await infoGather.json();
+  return jsonData;
 }
+
+startButton.addEventListener("click", () =>
+  showStudents("http://hp-api.herokuapp.com/api/characters").then(
+    (jsonData) => {
+      console.log(jsonData[10])
+    }
+  )
+);
