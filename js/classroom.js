@@ -49,15 +49,17 @@ async function showStudents(url) {
 startButton.addEventListener("click", () =>
   showStudents("http://hp-api.herokuapp.com/api/characters").then(
     (jsonData) => {
-      // let studentsDiv = document.getElementById("students-div");
+      let studentsDiv = document.getElementById("students-div");
       let studentsArray = [];
-      // studentsDiv.innerHTML += `<div>${student}</div>`;
       randomStudent();
       function randomStudent() {
         for (i = 0; i < jsonData.length; i++) {
           if ((jsonData[i].hogwartsStudent.value = true)) {
-            let student = jsonData[i].hogwartsStudent;
-            studentsArray.push(student);
+            let studentName =
+              jsonData[i].name + `<img src="${jsonData[i].image}"/>`;
+
+            studentsDiv.innerHTML += `<div>${studentName}</div>`;
+            studentsArray.push(studentName);
           }
         }
       }
