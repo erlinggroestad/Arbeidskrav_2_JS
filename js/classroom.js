@@ -37,6 +37,9 @@ function speechBubbleLeave() {
 let startButton = document.getElementById("start-button");
 startButton.innerHTML = "Start class";
 
+Math.floor(1.9999);
+Math.floor(1);
+
 async function showStudents(url) {
   const infoGather = await fetch(url);
   const jsonData = await infoGather.json();
@@ -46,10 +49,31 @@ async function showStudents(url) {
 startButton.addEventListener("click", () =>
   showStudents("http://hp-api.herokuapp.com/api/characters").then(
     (jsonData) => {
-      let studentsDiv = document.getElementById("students-div");
-      let hogwartsStudents = ["randomNumber"];
-      studentsDiv.innerHTML = `<div>${hogwartsStudents}</div>`;
-      
+      // let studentsDiv = document.getElementById("students-div");
+      let studentsArray = [];
+      // studentsDiv.innerHTML += `<div>${student}</div>`;
+      randomStudent();
+      function randomStudent() {
+        for (i = 0; i < jsonData.length; i++) {
+          if ((jsonData[i].hogwartsStudent.value = true)) {
+            let student = jsonData[i].hogwartsStudent;
+            studentsArray.push(student);
+          }
+        }
+      }
+
+      console.log(studentsArray);
+
+      // function randomInt(limit) {
+      //   return Math.floor(Math.random() * Math.floor(limit));
+      // }
+      // function random(choices) {
+      //   var index = randomInt(choices.length);
+      //   return choices[index];
+      // }
+      // for (i = 0; i < 11; i++) {
+      //   hogwartsStudents += random;
+      // }
     }
   )
 );
