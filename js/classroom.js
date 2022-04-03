@@ -46,7 +46,10 @@ async function showStudents(url) {
 startButton.addEventListener("click", () =>
   showStudents("http://hp-api.herokuapp.com/api/characters").then(
     (jsonData) => {
-      console.log(jsonData[10])
+      let studentsDiv = document.getElementById("students-div");
+      let hogwartsStudents = ["randomNumber"];
+      studentsDiv.innerHTML = `<div>${hogwartsStudents}</div>`;
+      
     }
   )
 );
