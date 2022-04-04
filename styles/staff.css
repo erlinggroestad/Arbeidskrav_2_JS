@@ -18,13 +18,54 @@ li {
   background-color: grey;
   padding: 20px;
   width: 150px;
-  height: 250px;
+  height: 300px;
   border: 1px solid black;
-
   display: inline-block;
   vertical-align: top;
 }
-li:hover {
-  opacity: 70%;
-  background-color: beige;
+
+.cards:hover {
+  background-color: white;
 }
+/*      Ikke ferdig
+
+#House- {
+  background-image: url(/images/allhouse.png);
+  background-position: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-color: white;
+}
+#House-Gryffindor {
+  background-image: url(/images/gryffindor.png);
+  background-position: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode:lighten;
+  background-color: red;
+}
+#House-Slytherin {
+  background-image: url(/images/slytherin.png);
+  background-position: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode:lighten;
+  background-color: green;
+}
+#House-Hufflepuff {
+  background-image: url(/images/hufflepuff.png);
+  background-position: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode:lighten;
+  background-color: orange;
+}
+#House-Ravenclaw {
+  background-image: url(/images/ravenclaw.png);
+  background-position: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode:lighten;
+  background-color: blue;
+}
+ */
