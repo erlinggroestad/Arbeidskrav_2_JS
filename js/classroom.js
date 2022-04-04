@@ -37,9 +37,6 @@ function speechBubbleLeave() {
 let startButton = document.getElementById("start-button");
 startButton.innerHTML = "Start class";
 
-Math.floor(1.9999);
-Math.floor(1);
-
 async function showStudents(url) {
   const infoGather = await fetch(url);
   const jsonData = await infoGather.json();
@@ -49,25 +46,42 @@ async function showStudents(url) {
 startButton.addEventListener("click", () =>
   showStudents("http://hp-api.herokuapp.com/api/characters").then(
     (jsonData) => {
+      const modifiedArray = jsonData.map((jsonData) => ({
+        imgUrl: jsonData.image,
+        name: jsonData.name,
+        house: jsonData.house,
+        student: jsonData.hogwartsStudent,
+      }));
+      console.log(modifiedArray);
+
+      function studentTester() {
+        for (i = 0; i < modifiedArray.length; i++) {
+          if ((modifiedArray[i].student = false)) {
+            console.log("wtf")
+          }
+        }
+      }
+
       let studentsDiv = document.getElementById("students-div");
       let studentsArray = [];
       randomStudent();
       function randomStudent() {
-        for (i = 0; i < jsonData.length; i++) {
-          if ((jsonData[i].hogwartsStudent.value = true)) {
-            let studentName =
-              `<img src="${jsonData[i].image}"onerror="this.src='/images/wizard.png'"/>` +
-              jsonData[i].name +
-              jsonData[i].house;
+        for (i = 0; i < 10; i++) {
+          {
+            let studentInfo =
+              `<img src="${modifiedArray[i].imgUrl}"onerror="this.src='/images/wizard.png'"/>` +
+              `<h3>${modifiedArray[i].name}</h3>` +
+              modifiedArray[i].house;
 
-            studentsDiv.innerHTML += `<div>${studentName}</div>`;
-            studentsArray.push(studentName);
+            studentsDiv.innerHTML += `<div>${studentInfo}</div>`;
+            studentsArray.push(studentInfo);
           }
         }
       }
 
       console.log(studentsArray);
-
+      // Math.floor(1.9999);
+      // Math.floor(1);
       // function randomInt(limit) {
       //   return Math.floor(Math.random() * Math.floor(limit));
       // }
@@ -76,7 +90,8 @@ startButton.addEventListener("click", () =>
       //   return choices[index];
       // }
       // for (i = 0; i < 11; i++) {
-      //   hogwartsStudents += random;
+      //   i += random;
+      //   console.log("hei jeg kjører")
       // }
     }
   )
