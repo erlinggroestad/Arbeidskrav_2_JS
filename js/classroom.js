@@ -37,14 +37,14 @@ function speechBubbleLeave() {
 let startButton = document.getElementById("start-button");
 startButton.innerHTML = "Start class";
 
-async function showStudents(url) {
+async function arrangeStudents(url) {
   const infoGather = await fetch(url);
   const jsonData = await infoGather.json();
   return jsonData;
 }
 
 startButton.addEventListener("click", () =>
-  showStudents("http://hp-api.herokuapp.com/api/characters/students").then(
+  arrangeStudents("http://hp-api.herokuapp.com/api/characters/students").then(
     (jsonData) => {
       const modifiedArray = jsonData.map((jsonData) => ({
         imgUrl: jsonData.image,
@@ -56,15 +56,17 @@ startButton.addEventListener("click", () =>
 
       let studentsDiv = document.getElementById("students-div");
       let studentsArray = [];
-      randomStudent();
-      function randomStudent() {
+      showStudents();
+      function showStudents() {
         for (i = 0; i < 10; i++) {
           {
+            let randNum;
+            randNum = Math.floor(Math.random() * 101);
+            console.log(randNum);
             let studentInfo =
-              `<img src="${modifiedArray[i].imgUrl}"onerror="this.src='/images/wizard.png'"/>` +
-              `<h3>${modifiedArray[i].name}</h3>` +
-              modifiedArray[i].house;
-
+              `<img src="${modifiedArray[randNum].imgUrl}"onerror="this.src='/images/wizard.png'"/>` +
+              `<h3>${modifiedArray[randNum].name}</h3>` +
+              modifiedArray[randNum].house;
             studentsDiv.innerHTML += `<div>${studentInfo}</div>`;
             studentsArray.push(studentInfo);
           }
