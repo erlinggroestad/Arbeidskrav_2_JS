@@ -56,7 +56,9 @@ startButton.addEventListener("click", () =>
         for (i = 0; i < jsonData.length; i++) {
           if ((jsonData[i].hogwartsStudent.value = true)) {
             let studentName =
-              jsonData[i].name + `<img src="${jsonData[i].image}"/>`;
+              `<img src="${jsonData[i].image}"/>` +
+              jsonData[i].name +
+              jsonData[i].house;
 
             studentsDiv.innerHTML += `<div>${studentName}</div>`;
             studentsArray.push(studentName);
