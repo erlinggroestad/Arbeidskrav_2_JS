@@ -44,7 +44,7 @@ async function showStudents(url) {
 }
 
 startButton.addEventListener("click", () =>
-  showStudents("http://hp-api.herokuapp.com/api/characters").then(
+  showStudents("http://hp-api.herokuapp.com/api/characters/students").then(
     (jsonData) => {
       const modifiedArray = jsonData.map((jsonData) => ({
         imgUrl: jsonData.image,
@@ -53,14 +53,6 @@ startButton.addEventListener("click", () =>
         student: jsonData.hogwartsStudent,
       }));
       console.log(modifiedArray);
-
-      function studentTester() {
-        for (i = 0; i < modifiedArray.length; i++) {
-          if ((modifiedArray[i].student = false)) {
-            console.log("wtf")
-          }
-        }
-      }
 
       let studentsDiv = document.getElementById("students-div");
       let studentsArray = [];
@@ -78,21 +70,6 @@ startButton.addEventListener("click", () =>
           }
         }
       }
-
-      console.log(studentsArray);
-      // Math.floor(1.9999);
-      // Math.floor(1);
-      // function randomInt(limit) {
-      //   return Math.floor(Math.random() * Math.floor(limit));
-      // }
-      // function random(choices) {
-      //   var index = randomInt(choices.length);
-      //   return choices[index];
-      // }
-      // for (i = 0; i < 11; i++) {
-      //   i += random;
-      //   console.log("hei jeg kjører")
-      // }
     }
   )
 );
