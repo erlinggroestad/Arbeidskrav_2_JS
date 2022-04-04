@@ -56,7 +56,7 @@ startButton.addEventListener("click", () =>
         for (i = 0; i < jsonData.length; i++) {
           if ((jsonData[i].hogwartsStudent.value = true)) {
             let studentName =
-              `<img src="${jsonData[i].image}"/>` +
+              `<img src="${jsonData[i].image}"onerror="this.src='/images/wizard.png'"/>` +
               jsonData[i].name +
               jsonData[i].house;
 
