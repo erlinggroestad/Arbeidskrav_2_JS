@@ -68,7 +68,7 @@ startButton.addEventListener("click", () =>
               `<img src="${modifiedArray[randNum].imgUrl}"onerror="this.src='/images/wizard.png'"/>` +
               `<h3>${modifiedArray[randNum].name}</h3>` +
               modifiedArray[randNum].house +
-              `<button id="delete-btn" onclick="deleteStudent(${modifiedArray[randNum]})">delete</button>`;
+              `<button id="deleteBtn" onclick="deleteStudent(${randNum})">delete</button>`;
             studentsDiv.innerHTML += `<div>${studentInfo}</div>`;
 
             studentsArray.push(studentInfo);
@@ -78,7 +78,7 @@ startButton.addEventListener("click", () =>
     }
   )
 );
-function deleteStudent(modifiedArray) {
+function deleteStudent(randNum) {
   var areYouSure = prompt("Are you sure? yes/no ");
   if (areYouSure == "yes") {
     modifiedArray.splice([randNum], 1);
