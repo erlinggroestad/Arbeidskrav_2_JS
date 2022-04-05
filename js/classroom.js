@@ -58,6 +58,7 @@ startButton.addEventListener("click", () =>
       let studentsArray = [];
       showStudents();
       function showStudents() {
+        studentsDiv.innerHTML = "";
         for (i = 0; i < 10; i++) {
           {
             let randNum;
