@@ -5,6 +5,7 @@
 img {
   width: 150px;
   height: 200px;
+  border-radius: 10px;
 }
 
 #staff-cards {
@@ -19,66 +20,93 @@ img {
 }
 li {
   background-color: rgb(210, 102, 102);
+  color: #fff;
+  font-size: 20px;
   margin: 30px;
+  text-shadow: 1px 1px black;
   width: 250px;
   height: 300px;
   border: 1px solid black;
+  border-radius: 10px;
   display: inline-block;
   vertical-align: top;
   padding: 30px;
   transition: transform 0.2s;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 li:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #fff;
+}
+#staff-text-info {
 }
 #patronus {
   display: none;
+  background-color: grey;
+
+  /* position: absolute;
+  top: 10%;
+  left: 10%;
+  transform: rotate(-45deg); */
 }
 .cards:hover #patronus {
-  background-color: white;
   display: block;
+  text-transform: capitalize;
 }
-/*      Ikke ferdig
+/* Ikke ferdig */
 
 #House- {
   background-image: url(/images/allhouse.png);
   background-position: no-repeat;
   background-position: center;
   background-size: cover;
-  background-color: white;
+  background-blend-mode: darken;
+
+  /* background-color: white; */
 }
 #House-Gryffindor {
   background-image: url(/images/gryffindor.png);
   background-position: no-repeat;
   background-position: center;
   background-size: cover;
-  background-blend-mode:lighten;
-  background-color: red;
+  background-blend-mode: darken;
+
+  /* background-color: red; */
 }
 #House-Slytherin {
   background-image: url(/images/slytherin.png);
   background-position: no-repeat;
   background-position: center;
   background-size: cover;
-  background-blend-mode:lighten;
-  background-color: green;
+  background-blend-mode: darken;
+  /* background-color: green; */
 }
 #House-Hufflepuff {
   background-image: url(/images/hufflepuff.png);
   background-position: no-repeat;
   background-position: center;
   background-size: cover;
-  background-blend-mode:lighten;
-  background-color: orange;
+  background-blend-mode: darken;
+  /* background-color: orange; */
 }
 #House-Ravenclaw {
   background-image: url(/images/ravenclaw.png);
   background-position: no-repeat;
   background-position: center;
   background-size: cover;
-  background-blend-mode:lighten;
-  background-color: blue;
+  background-blend-mode: darken;
+  /* background-color: blue; */
 }
- */
+
 .create-staff-form {
+  display: grid;
+  margin: 20px;
+  justify-content: center;
+  /* grid-template-areas: "name " ; */
+}
+.input {
+  padding: 10px;
+}
+option {
+  font-size: 14px;
 }

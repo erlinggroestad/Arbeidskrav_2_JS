@@ -21,9 +21,13 @@ fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
          <img id="staff-img" src="${
            jsonData[i].image
          }" alt="" onerror="this.src='/images/wizard.png'" /> <br>
+        
+        <div id="staff-text-info" <br>
          Name: ${jsonData[i].name} <br>
          House: ${jsonData[i].house} <br>
-         <div id="patronus">Patronus: ${jsonData[i].patronus} </div></li>`;
+         <div id="patronus">Patronus: ${
+           jsonData[i].patronus
+         } </div></div></li>`;
         // cards.addEventListener("mouseenter", speechBubbleHover);
       }
       document.getElementById("staff-cards").innerHTML = staffCardsInfo;
@@ -31,6 +35,4 @@ fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
   )
 );
 
-function addStaff() {
-
-}
+function addStaff() {}
