@@ -7,25 +7,36 @@ img {
   height: 200px;
 }
 
-#cards {
-  width: 1000px;
+#staff-cards {
+  width: 100%;
+  display: grid;
+  justify-content: space-around;
+  grid-template-columns: repeat(4, auto);
 }
-ul {
-  text-align: left;
+.staff-cards-wrapper {
+  text-align: center;
   background-color: grey;
 }
 li {
-  background-color: grey;
-  padding: 20px;
-  width: 150px;
+  background-color: rgb(210, 102, 102);
+  margin: 30px;
+  width: 250px;
   height: 300px;
   border: 1px solid black;
   display: inline-block;
   vertical-align: top;
+  padding: 30px;
+  transition: transform 0.2s;
 }
-
-.cards:hover {
+li:hover {
+  transform: scale(1.1);
+}
+#patronus {
+  display: none;
+}
+.cards:hover #patronus {
   background-color: white;
+  display: block;
 }
 /*      Ikke ferdig
 
@@ -69,3 +80,5 @@ li {
   background-color: blue;
 }
  */
+.create-staff-form {
+}

@@ -1,4 +1,4 @@
-let speechBubble = document.getElementById("patronus");
+let createStaffBtn = document.getElementById("create-staff-btn");
 let cards = document.getElementById("cards");
 
 async function getStaffApi(url) {
@@ -30,11 +30,7 @@ fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
     }
   )
 );
-function speechBubbleHover() {
-  speechBubble.style.opacity = 100;
-  cards.addEventListener("mouseleave", speechBubbleLeave);
-  alert("Hello");
-}
-function speechBubbleLeave() {
-  speechBubble.style.opacity = 0;
+
+function addStaff() {
+
 }
