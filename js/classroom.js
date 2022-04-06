@@ -41,7 +41,9 @@ let studentsArray = [];
 async function arrangeStudents(url) {
   const infoGather = await fetch(url);
   const jsonData = await infoGather.json();
-  return jsonData;
+  jsonData.forEach((character) => {
+    studentsArray.push(character);
+  });
 }
 
 startButton.addEventListener("click", () =>
@@ -50,7 +52,6 @@ startButton.addEventListener("click", () =>
       let studentsDiv = document.getElementById("students-div");
       showStudents();
       function showStudents() {
-        studentsArray.push(jsonData);
         studentsDiv.innerHTML = "";
         for (i = 0; i < 10; i++) {
           {
@@ -59,29 +60,40 @@ startButton.addEventListener("click", () =>
             console.log(randNum);
             // bytt om alt til createElement og append til studentsDiv
             // let studentInfo =
+            let studentImg = document.createElement("img");
+            studentImg.src = studentsArray[randNum].image;
+            //   (studentImg.onerror = errorImage());
+            // function errorImage() {
+            //   studentImg.src = "/images/wizard.png";
+            // }
             // `<img src="${jsonData[randNum].imgUrl}"onerror="this.src='/images/wizard.png'"/>` +
+            let studentName = document.createElement("h3");
+            studentName.innerHTML = studentsArray[randNum].name;
             // `<h3>${jsonData[randNum].name}</h3>` +
             // jsonData[randNum].house +
-            let deleteBtn = document.createElement("button");
-            deleteBtn.innerText = "slett";
-            deleteBtn.addEventListener("click", deleteStudent(randNum));
-            studentsDiv.append(deleteBtn);
-            studentsDiv.innerHTML += `<div>${studentInfo}</div>`;
+            let studentHouse = document.createElement("p");
+            studentHouse.innerHTML = studentsArray[randNum].house;
 
-            studentsArray.push(studentInfo);
+            studentsDiv.append(studentImg, studentName, studentHouse);
+
+            // let deleteBtn = document.createElement("button");
+            // deleteBtn.innerText = "delete";
+            // deleteBtn.addEventListener("click", deleteStudent(randNum));
+            // studentsDiv.append(deleteBtn);
+            // studentsDiv.innerHTML += `<div>${studentInfo}</div>`;
           }
         }
       }
     }
   )
 );
-
-function deleteStudent(randNum) {
-  var areYouSure = prompt("Are you sure? yes/no ");
-  if (areYouSure == "yes") {
-    jsonData.splice([randNum], 1);
-    showStudents();
-  } else {
-    console.log("nothing happens");
-  }
-}
+console.log(studentsArray);
+// function deleteStudent(randNum) {
+//   var areYouSure = prompt("Are you sure? yes/no ");
+//   if (areYouSure == "yes") {
+//     jsonData.splice([randNum], 1);
+//     showStudents();
+//   } else {
+//     console.log("nothing happens");
+//   }
+// }
