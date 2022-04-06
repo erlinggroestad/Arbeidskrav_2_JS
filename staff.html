@@ -10,24 +10,23 @@
   <body>
     <div class="staff-cards-wrapper">
       <h1>Staff at Hogwartz</h1>
-       <div class="create-staff-form">
-      <input type="text" placeholder="Full Name" />
-      <label for="house">Choose a house</label>
-      <select name="house" id="select">
-        <option value="Gryffindor">Gryffindor</option>
-        <option value="Slytherin">Slytherin</option>
-        <option value="Ravenclaw">Ravenclaw</option>
-        <option value="Hufflepuff">Hufflepuff</option>
-        <option value="No House">No House</option>
-      </select>
-      <input type="text" placeholder="Write your Patronus" />
-      <button id="create-staff-btn" onclick="addStaff()">Add Staff</button>
-      <!-- Legg til default bildet på onclick -->
-    <ul id="staff-cards"></ul>
-   
+      <div class="create-staff-form">
+        <input type="text" placeholder="Full Name" />
+        <label for="house">Choose a house</label>
+        <select name="house" id="select">
+          <option value="Gryffindor">Gryffindor</option>
+          <option value="Slytherin">Slytherin</option>
+          <option value="Ravenclaw">Ravenclaw</option>
+          <option value="Hufflepuff">Hufflepuff</option>
+          <option value="No House">No House</option>
+        </select>
+        <input type="text" placeholder="Write your Patronus" />
+        <button id="create-staff-btn" onclick="addStaff()">Add Staff</button>
+        <!-- Legg til default bildet på onclick -->
+        <ul id="staff-cards"></ul>
+      </div>
     </div>
-    </div>
-    
+
     <script src="/js/staff.js"></script>
   </body>
 </html>
