@@ -36,6 +36,7 @@ function speechBubbleLeave() {
 
 let startButton = document.getElementById("start-button");
 startButton.innerHTML = "Start class";
+let studentsArray = [];
 
 async function arrangeStudents(url) {
   const infoGather = await fetch(url);
@@ -46,29 +47,25 @@ async function arrangeStudents(url) {
 startButton.addEventListener("click", () =>
   arrangeStudents("http://hp-api.herokuapp.com/api/characters/students").then(
     (jsonData) => {
-      const modifiedArray = jsonData.map((jsonData) => ({
-        imgUrl: jsonData.image,
-        name: jsonData.name,
-        house: jsonData.house,
-        student: jsonData.hogwartsStudent,
-      }));
-      console.log(modifiedArray);
-
       let studentsDiv = document.getElementById("students-div");
-      let studentsArray = [];
       showStudents();
       function showStudents() {
+        studentsArray.push(jsonData);
         studentsDiv.innerHTML = "";
         for (i = 0; i < 10; i++) {
           {
             let randNum;
             randNum = Math.floor(Math.random() * 101);
             console.log(randNum);
-            let studentInfo =
-              `<img src="${modifiedArray[randNum].imgUrl}"onerror="this.src='/images/wizard.png'"/>` +
-              `<h3>${modifiedArray[randNum].name}</h3>` +
-              modifiedArray[randNum].house +
-              `<button id="deleteBtn" onclick="deleteStudent(${randNum})">delete</button>`;
+            // bytt om alt til createElement og append til studentsDiv
+            // let studentInfo =
+            // `<img src="${jsonData[randNum].imgUrl}"onerror="this.src='/images/wizard.png'"/>` +
+            // `<h3>${jsonData[randNum].name}</h3>` +
+            // jsonData[randNum].house +
+            let deleteBtn = document.createElement("button");
+            deleteBtn.innerText = "slett";
+            deleteBtn.addEventListener("click", deleteStudent(randNum));
+            studentsDiv.append(deleteBtn);
             studentsDiv.innerHTML += `<div>${studentInfo}</div>`;
 
             studentsArray.push(studentInfo);
@@ -78,10 +75,11 @@ startButton.addEventListener("click", () =>
     }
   )
 );
+
 function deleteStudent(randNum) {
   var areYouSure = prompt("Are you sure? yes/no ");
   if (areYouSure == "yes") {
-    modifiedArray.splice([randNum], 1);
+    jsonData.splice([randNum], 1);
     showStudents();
   } else {
     console.log("nothing happens");
