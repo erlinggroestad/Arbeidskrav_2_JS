@@ -49,43 +49,41 @@ async function arrangeStudents(url) {
 startButton.addEventListener("click", () =>
   arrangeStudents("http://hp-api.herokuapp.com/api/characters/students").then(
     (jsonData) => {
-      let studentsDiv = document.getElementById("students-div");
       showStudents();
-      function showStudents() {
-        studentsDiv.innerHTML = "";
-        for (i = 0; i < 10; i++) {
-          {
-            let randNum;
-            randNum = Math.floor(Math.random() * 101);
-            console.log(randNum);
-            
-            let studentImg = document.createElement("img");
-            studentImg.src = studentsArray[randNum].image;
-            studentImg.addEventListener("error", errorImage);
-            function errorImage() {
-              studentImg.src = "/images/wizard.png";
-            }
-            let studentName = document.createElement("h3");
-            studentName.innerHTML = studentsArray[randNum].name;
-            let studentHouse = document.createElement("p");
-            studentHouse.innerHTML = studentsArray[randNum].house;
-
-            let deleteBtn = document.createElement("button");
-            deleteBtn.innerHTML = "delete";
-            deleteBtn.addEventListener("click", deleteStudent);
-
-            studentsDiv.append(
-              studentImg,
-              studentName,
-              studentHouse,
-              deleteBtn
-            );
-          }
-        }
-      }
     }
   )
 );
+
+function showStudents() {
+  let studentsDiv = document.getElementById("students-div");
+  studentsDiv.innerHTML = "";
+  for (i = 0; i < 10; i++) {
+    {
+      let studentCard = document.createElement("div");
+      let randNum;
+      randNum = Math.floor(Math.random() * 101);
+      console.log(randNum);
+
+      let studentImg = document.createElement("img");
+      studentImg.src = studentsArray[randNum].image;
+      studentImg.addEventListener("error", errorImage);
+      function errorImage() {
+        studentImg.src = "/images/wizard.png";
+      }
+      let studentName = document.createElement("h3");
+      studentName.innerHTML = studentsArray[randNum].name;
+      let studentHouse = document.createElement("p");
+      studentHouse.innerHTML = studentsArray[randNum].house;
+
+      let deleteBtn = document.createElement("button");
+      deleteBtn.innerHTML = "delete";
+      deleteBtn.addEventListener("click", deleteStudent);
+
+      studentCard.append(studentImg, studentName, studentHouse, deleteBtn);
+      studentsDiv.append(studentCard);
+    }
+  }
+}
 console.log(studentsArray);
 function deleteStudent(randNum) {
   var areYouSure = prompt("Are you sure? yes/no ");
