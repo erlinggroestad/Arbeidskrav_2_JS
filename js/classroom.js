@@ -58,29 +58,28 @@ startButton.addEventListener("click", () =>
             let randNum;
             randNum = Math.floor(Math.random() * 101);
             console.log(randNum);
-            // bytt om alt til createElement og append til studentsDiv
-            // let studentInfo =
+            
             let studentImg = document.createElement("img");
             studentImg.src = studentsArray[randNum].image;
             studentImg.addEventListener("error", errorImage);
             function errorImage() {
               studentImg.src = "/images/wizard.png";
             }
-            // `<img src="${jsonData[randNum].imgUrl}"onerror="this.src='/images/wizard.png'"/>` +
             let studentName = document.createElement("h3");
             studentName.innerHTML = studentsArray[randNum].name;
-            // `<h3>${jsonData[randNum].name}</h3>` +
-            // jsonData[randNum].house +
             let studentHouse = document.createElement("p");
             studentHouse.innerHTML = studentsArray[randNum].house;
 
-            studentsDiv.append(studentImg, studentName, studentHouse);
+            let deleteBtn = document.createElement("button");
+            deleteBtn.innerHTML = "delete";
+            deleteBtn.addEventListener("click", deleteStudent);
 
-            // let deleteBtn = document.createElement("button");
-            // deleteBtn.innerText = "delete";
-            // deleteBtn.addEventListener("click", deleteStudent(randNum));
-            // studentsDiv.append(deleteBtn);
-            // studentsDiv.innerHTML += `<div>${studentInfo}</div>`;
+            studentsDiv.append(
+              studentImg,
+              studentName,
+              studentHouse,
+              deleteBtn
+            );
           }
         }
       }
@@ -88,12 +87,13 @@ startButton.addEventListener("click", () =>
   )
 );
 console.log(studentsArray);
-// function deleteStudent(randNum) {
-//   var areYouSure = prompt("Are you sure? yes/no ");
-//   if (areYouSure == "yes") {
-//     jsonData.splice([randNum], 1);
-//     showStudents();
-//   } else {
-//     console.log("nothing happens");
-//   }
-// }
+function deleteStudent(randNum) {
+  var areYouSure = prompt("Are you sure? yes/no ");
+  if (areYouSure == "yes") {
+    studentsArray.splice([randNum], 1);
+    console.log(studentsArray);
+    showStudents();
+  } else {
+    console.log("nothing happens");
+  }
+}
