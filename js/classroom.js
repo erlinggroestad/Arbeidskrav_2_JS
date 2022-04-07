@@ -62,10 +62,10 @@ startButton.addEventListener("click", () =>
             // let studentInfo =
             let studentImg = document.createElement("img");
             studentImg.src = studentsArray[randNum].image;
-            //   (studentImg.onerror = errorImage());
-            // function errorImage() {
-            //   studentImg.src = "/images/wizard.png";
-            // }
+            studentImg.addEventListener("error", errorImage);
+            function errorImage() {
+              studentImg.src = "/images/wizard.png";
+            }
             // `<img src="${jsonData[randNum].imgUrl}"onerror="this.src='/images/wizard.png'"/>` +
             let studentName = document.createElement("h3");
             studentName.innerHTML = studentsArray[randNum].name;
