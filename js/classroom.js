@@ -90,6 +90,7 @@ function deleteStudent(randNum) {
   if (areYouSure == "yes") {
     studentsArray.splice([randNum], 1);
     console.log(studentsArray);
+    
     showStudents();
   } else {
     console.log("nothing happens");
