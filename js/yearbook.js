@@ -1,4 +1,5 @@
-let gryffindorBtn = document.getElementById("gryffindor-btn")
+let houseGryffindor = document.getElementById("house-gryffindor");
+let gryffindorBtn = document.getElementById("gryffindor-btn");
 
 async function getHpApi(url) {
   const infoGather = await fetch(url);
@@ -12,6 +13,6 @@ gryffindorBtn.addEventListener("click", () =>
     }
   )
 );
-function showStudents(jsonData){
-    console.log(jsonData)
+function showStudents(jsonData) {
+  console.log(jsonData);
 }
