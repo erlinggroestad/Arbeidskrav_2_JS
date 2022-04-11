@@ -38,8 +38,7 @@ li:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px #fff;
 }
-#staff-text-info {
-}
+
 #patronus {
   display: none;
   background-color: grey;
