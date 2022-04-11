@@ -64,6 +64,11 @@ function showStudents() {
       randNum = Math.floor(Math.random() * 101);
       console.log(randNum);
 
+      let randColorNum;
+      randColorNum = Math.floor(Math.random() * 999);
+
+      studentCard.style.backgroundColor = "#" + randColorNum;
+
       let studentImg = document.createElement("img");
       studentImg.src = studentsArray[randNum].image;
       studentImg.addEventListener("error", errorImage);
@@ -90,8 +95,6 @@ function deleteStudent(randNum) {
   if (areYouSure == "yes") {
     studentsArray.splice([randNum], 1);
     console.log(studentsArray);
-    
-    showStudents();
   } else {
     console.log("nothing happens");
   }
