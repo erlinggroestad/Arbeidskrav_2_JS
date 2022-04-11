@@ -56,7 +56,7 @@ function addStaff() {
     for (let i = 0; i < addedStaffArray.length; i++) {
       staffCardsInfo += `<li class="cards" id="${
         `House-` + addedStaffArray[i].house
-      }}">
+      }">
          <img id="staff-img" src="" alt="" onerror="this.src='/images/wizard.png'" /> <br>
 
         <div id="staff-text-info" <br>
