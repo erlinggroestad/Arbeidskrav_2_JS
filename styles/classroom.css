@@ -53,18 +53,15 @@ img {
 }
 .students__container {
   display: flex;
-  align-items: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 50px;
   width: 100%;
   color: white;
-  /* min-height: 200px; */
-  
-  /* background-color: grey; */
+  padding-top: 50px;
 }
 
 .students__container div{
     border-radius: 20px;
-    width: 15%;
-    padding: 30px;
+    width: 20%;
 }
