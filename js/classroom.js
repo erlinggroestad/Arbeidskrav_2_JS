@@ -55,6 +55,7 @@ startButton.addEventListener("click", () =>
 let visableStudents = [];
 function showStudents() {
   let studentsDiv = document.getElementById("students-div");
+ 
   studentsDiv.innerHTML = "";
   for (i = 0; i < 10; i++) {
     {

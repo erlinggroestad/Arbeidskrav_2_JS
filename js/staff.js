@@ -17,23 +17,24 @@ fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
         staffCardsInfo += `<li class="cards" id="${
           `House-` + jsonData[i].house
         }">
-         <img id="staff-img" src="${
-           jsonData[i].image
-         }" alt="" onerror="this.src='/images/wizard.png'" /> <br>
+        <button onclick="deleteStaff()"> Delete me </button> <br>
+        <img id="staff-img" src="${
+          jsonData[i].image
+        }" alt="" onerror="this.src='/images/wizard.png'" /> <br>
 
         <div id="staff-text-info" <br>
-        Name:<div id="staff-name">${jsonData[i].name}</div>
-        House:<div id="staff-house"> ${jsonData[i].house} 
-         <div id="patronus">Patronus: ${
-           jsonData[i].patronus
-         } </div></div></li>`;
+        <div id="staff-name">   Name: ${jsonData[i].name}</div>
+        <div id="staff-house">  House: ${jsonData[i].house}</div>
+        <div id="patronus">     Patronus: ${jsonData[i].patronus}</div>
+        </li>`;
       }
       document.getElementById("staff-cards").innerHTML = staffCardsInfo;
     }
   )
 );
-
 addedStaffArray = [];
+
+
 
 function addStaff() {
   let inputName = document.getElementById("select-name").value;
@@ -48,37 +49,34 @@ function addStaff() {
       patronus: inputPatronus,
       house: result,
     });
-    addNewStaff();
+    addedStaffCards();
   }
 
-  function addNewStaff() {
-    let staffCardsInfo = "";
+  function addedStaffCards() {
+    let newStaffCardsInfo = "";
     for (let i = 0; i < addedStaffArray.length; i++) {
-      staffCardsInfo += `<li class="cards" id="${
+      newStaffCardsInfo += `<li class="cards" id="${
         `House-` + addedStaffArray[i].house
       }">
-         <img id="staff-img" src="" alt="" onerror="this.src='/images/wizard.png'" /> <br>
+
+        <button onclick="deleteStaff()"> Delete me </button> <br>
+        <img id="staff-img" src="" alt="" onerror="this.src='/images/wizard.png'" /> <br>
 
         <div id="staff-text-info" <br>
-        Name:<div id="staff-name">${addedStaffArray[i].name}</div>
-        House:<div id="staff-house"> ${addedStaffArray[i].house} 
-         <div id="patronus">Patronus: ${
-           addedStaffArray[i].patronus
-         } </div></div></li>`;
+        <div id="staff-name">   Name: ${addedStaffArray[i].name}</div>
+        <div id="staff-house">  House: ${addedStaffArray[i].house} </div>
+        <div id="patronus">     Patronus: ${addedStaffArray[i].patronus}</div>
+        </li>`;
     }
-    document.getElementById("staff-cards").innerHTML = staffCardsInfo;
+    document.getElementById("staff-cards").innerHTML = newStaffCardsInfo;
   }
-  // alert(inputName);
-  // alert(inputHouse);
-  // alert(result);
-  // for (let i = 0; i < jsonData.length; i++) {
-  //   staffCardsInfo += `<li class="cards" id="${`House-` + jsonData[i].house}">
-  //        <img id="staff-img" src="" alt="" onerror="this.src='/images/wizard.png'" /> <br>
-  //       <div id="staff-text-info" <br>
-  //       Name:<div id="staff-name">${jsonData[i].name}</div>
-  //       House:<div id="staff-house"> ${jsonData[i].house}
-  //        <div id="patronus">Patronus: ${
-  //          jsonData[i].patronus
-  //        } </div></div></li>`;
-  // }
 }
+
+// function deleteStaff(i) {
+//   let confirmDelete = prompt("Are you sure you want too delete? yes/no");
+//   if (confirmDelete == "yes") {
+//     addedStaffArray.splice(i, 1);
+//     addedStaffCards();
+//   }
+// }
+// console.log(addedStaffArray);

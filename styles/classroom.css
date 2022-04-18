@@ -1,13 +1,70 @@
-*{
-    padding: 0;
-    margin: 0;
+* {
+  padding: 0;
+  margin: 0;
 }
-.professor__snape__img:hover{
-opacity: 90%;
+body {
+  background-image: url(/images/classroomBackground.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  color: snow;
+
+  text-align: center;
 }
-.speech__bubble{
-    height: 20px;
-    width: 100px;
-    border: solid;
-    opacity: 0;
+.snape__container {
+  width: auto;
+  text-align: center;
+  position: relative;
+}
+.speech__bubble {
+  position: absolute;
+  top: 10%;
+  left: 55%;
+  height: 20px;
+  width: 100px;
+  border: dotted;
+  border-radius: 20px;
+  padding: 10px;
+  color: whitesmoke;
+  opacity: 0;
+  transform: rotate(30deg);
+}
+.professor__snape__img {
+  width: 400px;
+  height: auto;
+}
+.professor__snape__img:hover {
+  opacity: 80%;
+}
+.snape__info{
+    font-size: 24px;
+    padding: 20px;
+}
+.start__button{
+    padding: 10px;
+    font-size: 24px;
+}
+
+img {
+  width: 250px;
+  height: 313px;
+  border-radius: 30px;
+  
+}
+.students__container {
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 30px;
+  width: 100%;
+  color: white;
+  /* min-height: 200px; */
+  
+  /* background-color: grey; */
+}
+
+.students__container div{
+    border-radius: 20px;
+    width: 15%;
+    padding: 30px;
 }
