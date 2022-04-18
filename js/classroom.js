@@ -48,12 +48,13 @@ async function arrangeStudents(url) {
 startButton.addEventListener("click", () =>
   arrangeStudents("http://hp-api.herokuapp.com/api/characters/students").then(
     () => {
-      showStudents();
+      makeStudents();
     }
   )
 );
-let visableStudents = [];
-function showStudents() {
+  let visableStudents = [];
+function makeStudents() {
+  visableStudents = [];
   let studentsDiv = document.getElementById("students-div");
  
   studentsDiv.innerHTML = "";
@@ -87,9 +88,12 @@ function showStudents() {
       studentCard.append(studentImg, studentName, studentHouse, deleteBtn);
       studentsDiv.append(studentCard);
       visableStudents.push(studentCard);
+      showStudents()
     }
   }
 }
+
+
 console.log(visableStudents);
 function deleteStudent(randNum) {
   var areYouSure = prompt("Are you sure? yes/no ");
