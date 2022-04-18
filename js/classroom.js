@@ -103,3 +103,6 @@ function deleteStudent(i, visableStudents) {
     console.log("nothing happens");
   }
 }
+// Kod ut alt av createElement i showStudent og hard kod det på nytt, hvis ikke si fra til Amina
+// Behold deleteKnappen, test den for hver ting man legger til.
+// INDEX BLIR ALLTID 10 WTF
