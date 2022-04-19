@@ -40,8 +40,6 @@ fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
   )
 );
 
-addedStaffArray = [];
-
 // Trenger å fikse edit på alle ansatte og slette funksjon
 
 function addStaff() {
@@ -118,3 +116,10 @@ function editFunc() {
     editStaffPatronus.style.backgroundColor = null;
   });
 }
+
+addedStaffArray = [];
+
+console.log(addedStaffArray);
+
+// Edit funker bare på første cardet, i cardsa fra apiet og de man lager.
+// Splice sletter fra addedstaffarrayet men kun første posisjonen... selvom skrevet i, 1
