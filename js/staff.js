@@ -6,8 +6,6 @@ async function getStaffApi(url) {
   return jsonData;
 }
 
-function staffFromApi() {}
-
 fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
   getStaffApi("http://hp-api.herokuapp.com/api/characters/staff").then(
     (jsonData) => {
@@ -20,7 +18,7 @@ fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
           `House-` + jsonData[i].house
         }">
         <div id="cards__container">
-        <button type="submit" id="edit-button">Edit</button>
+        <button type="submit" id="edit-button" onclick="editFunc()">Edit</button>
         <button type="submit" id="end-editing">Done</button> <br>
  
         <button onclick="deleteStaff()"> Delete me </button> <br>
@@ -35,12 +33,12 @@ fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
         </div></li>`;
       }
       document.getElementById("staff-cards").innerHTML = staffCardsInfo;
-      editFunc();
     }
   )
 );
 
 // Trenger å fikse edit på alle ansatte og slette funksjon
+addedStaffArray = [];
 
 function addStaff() {
   let inputName = document.getElementById("select-name").value;
@@ -78,7 +76,7 @@ function addStaff() {
         </div></li>`;
     }
     document.getElementById("staff-cards").innerHTML = staffCardsInfo;
-    editFunc();
+   
   }
 }
 
@@ -88,6 +86,7 @@ function deleteStaff(i) {
     addedStaffArray.splice(i, 1);
   }
 }
+
 function editFunc() {
   const editStaffName = document.getElementById("staff-name");
   const editStaffHouse = document.getElementById("staff-house");
@@ -116,8 +115,6 @@ function editFunc() {
     editStaffPatronus.style.backgroundColor = null;
   });
 }
-
-addedStaffArray = [];
 
 console.log(addedStaffArray);
 
