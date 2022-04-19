@@ -38,7 +38,7 @@ fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
 );
 
 // Trenger å fikse edit på alle ansatte og slette funksjon
-addedStaffArray = [];
+let addedStaffArray = [];
 
 function addStaff() {
   let inputName = document.getElementById("select-name").value;
@@ -57,16 +57,16 @@ function addStaff() {
   }
 
   function addedStaffCards() {
-    let staffCardsInfo = "";
+    let newStaffCardsInfo = "";
     for (let i = 0; i < addedStaffArray.length; i++) {
-      staffCardsInfo += `<li class="cards" id="${
+      newStaffCardsInfo += `<li class="cards" id="${
         `House-` + addedStaffArray[i].house
       }">
         <div id="cards__container">
         <button type="submit" id="edit-button">Edit</button>
         <button type="submit" id="end-editing">Done</button><br>
 
-        <button onclick="deleteStaff()"> Delete me </button> <br>
+        <button onclick="deleteStaff(${i})"> Delete me </button> <br>
         <img id="staff-img" src="" alt="" onerror="this.src='/images/wizard.png'" /> <br>
 
         <div id="staff-text-info" <br>
@@ -75,8 +75,7 @@ function addStaff() {
         Patronus: <div id="patronus"> ${addedStaffArray[i].patronus}</div>
         </div></li>`;
     }
-    document.getElementById("staff-cards").innerHTML = staffCardsInfo;
-   
+    document.getElementById("staff-cards").innerHTML = newStaffCardsInfo;
   }
 }
 
