@@ -9,33 +9,40 @@ async function getStaffApi(url) {
 fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
   getStaffApi("http://hp-api.herokuapp.com/api/characters/staff").then(
     (jsonData) => {
-      console.log(jsonData);
-
       let staffCardsInfo = "";
 
       for (let i = 0; i < jsonData.length; i++) {
-        staffCardsInfo += `<li class="cards" ${jsonData[i].name}  id="${
+        staffCardsInfo += `<li class="cards" id="${
           `House-` + jsonData[i].house
         }">
         <div id="cards__container">
-        <button type="submit" id="edit-button" onclick="editFunc()">Edit</button>
+        <button type="submit" id="edit-button" onclick="editFunc(${i})">Edit</button>
         <button type="submit" id="end-editing">Done</button> <br>
  
-        <button onclick="deleteStaff()"> Delete me </button> <br>
+        <button onclick="deleteStaff(${i})"> Delete me </button> <br>
         <img id="staff-img" src="${
           jsonData[i].image
         }" alt="" onerror="this.src='/images/wizard.png'" /> <br>
 
         <div id="staff-text-info" <br>
-        Name: <div id="staff-name">    ${jsonData[i].name}</div>
+        Name: <div id=${`staff-name-` + jsonData[i].name} >    ${
+          jsonData[i].name
+        }</div>
         House: <div id="staff-house">   ${jsonData[i].house}</div>
         Patronus: <div id="patronus"> ${jsonData[i].patronus}</div>
         </div></li>`;
       }
       document.getElementById("staff-cards").innerHTML = staffCardsInfo;
+      console.log(jsonData);
     }
   )
 );
+function deleteStaff(i) {
+  let confirmDelete = prompt("Are you sure you want too delete? yes/no");
+  if (confirmDelete == "yes") {
+    jsonData.splice(i, 1);
+  }
+}
 
 // Trenger å fikse edit på alle ansatte og slette funksjon
 let addedStaffArray = [];
@@ -79,13 +86,6 @@ function addStaff() {
   }
 }
 
-function deleteStaff(i) {
-  let confirmDelete = prompt("Are you sure you want too delete? yes/no");
-  if (confirmDelete == "yes") {
-    addedStaffArray.splice(i, 1);
-  }
-}
-
 function editFunc() {
   const editStaffName = document.getElementById("staff-name");
   const editStaffHouse = document.getElementById("staff-house");
@@ -114,8 +114,15 @@ function editFunc() {
     editStaffPatronus.style.backgroundColor = null;
   });
 }
+function deleteStaff(i) {
+  let confirmDelete = prompt("Are you sure you want too delete? yes/no");
+  if (confirmDelete == "yes") {
+    addedStaffArray.splice(i, 1);
+  }
+}
 
 console.log(addedStaffArray);
 
 // Edit funker bare på første cardet, i cardsa fra apiet og de man lager.
 // Splice sletter fra addedstaffarrayet men kun første posisjonen... selvom skrevet i, 1
+// Må få til å legge nye staff etter de fra API
