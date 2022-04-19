@@ -38,7 +38,7 @@ fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
 );
 
 // Trenger å fikse edit på alle ansatte og slette funksjon
-addedStaffArray = [];
+let addedStaffArray = [];
 
 function addStaff() {
   let inputName = document.getElementById("select-name").value;
@@ -76,7 +76,6 @@ function addStaff() {
         </div></li>`;
     }
     document.getElementById("staff-cards").innerHTML = staffCardsInfo;
-   
   }
 }
 
