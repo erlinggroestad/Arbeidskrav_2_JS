@@ -68,41 +68,46 @@ function showStudents(visableStudents) {
   let studentsDiv = document.getElementById("students-div");
   studentsDiv.innerHTML = "";
   for (i = 0; i < visableStudents.length; i++) {
-    let studentCard = document.createElement("div");
-    let randColorNum;
-    randColorNum = Math.floor(Math.random() * 999);
-    studentCard.style.backgroundColor = "#" + randColorNum;
-    let studentImg = document.createElement("img");
-    studentImg.src = visableStudents[i].image;
-    studentImg.addEventListener("error", errorImage);
-    function errorImage() {
-      studentImg.src = "/images/wizard.png";
+    try {
+      throw i;
+    } catch (ii) {
+      let studentCard = document.createElement("div");
+      let randColorNum;
+      randColorNum = Math.floor(Math.random() * 999);
+      studentCard.style.backgroundColor = "#" + randColorNum;
+      let studentImg = document.createElement("img");
+      studentImg.src = visableStudents[i].image;
+      studentImg.addEventListener("error", errorImage);
+      function errorImage() {
+        studentImg.src = "/images/wizard.png";
+      }
+      let studentName = document.createElement("h3");
+      studentName.innerHTML = visableStudents[i].name;
+      let studentHouse = document.createElement("p");
+      studentHouse.innerHTML = visableStudents[i].house;
+      let deleteBtn = document.createElement("button");
+      deleteBtn.innerHTML = "delete";
+      deleteBtn.addEventListener("click", () => {
+        deleteStudent(ii, visableStudents);
+      });
+      studentCard.append(studentImg, studentName, studentHouse, deleteBtn);
+      studentsDiv.append(studentCard);
+      console.log(i, "each random student from array");
     }
-    let studentName = document.createElement("h3");
-    studentName.innerHTML = visableStudents[i].name;
-    let studentHouse = document.createElement("p");
-    studentHouse.innerHTML = visableStudents[i].house;
-    let deleteBtn = document.createElement("button");
-    deleteBtn.innerHTML = "delete";
-    deleteBtn.addEventListener("click", () => {
-      deleteStudent(i, visableStudents);
-    });
-    studentCard.append(studentImg, studentName, studentHouse, deleteBtn);
-    studentsDiv.append(studentCard);
-    console.log(i);
   }
 }
 
-function deleteStudent(i, visableStudents) {
+function deleteStudent(ii, visableStudents) {
   var areYouSure = prompt("Are you sure? yes/no ");
   if (areYouSure == "yes") {
-    visableStudents.splice(i, 1);
+    visableStudents.splice(ii, 1);
     console.log(visableStudents, "delete blir utført");
-    console.log(i);
+    console.log(ii);
+    let randNum = Math.floor(Math.random() * studentsArray.length);
+    console.log(randNum, "makestudentsForLoop");
+    visableStudents.push(studentsArray[randNum]);
+    showStudents(visableStudents);
   } else {
     console.log("nothing happens");
   }
 }
-// Kod ut alt av createElement i showStudent og hard kod det på nytt, hvis ikke si fra til Amina
-// Behold deleteKnappen, test den for hver ting man legger til.
-// INDEX BLIR ALLTID 10 WTF
