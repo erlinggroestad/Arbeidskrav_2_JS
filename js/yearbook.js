@@ -30,7 +30,14 @@ function addStudentsGryffindor(jsonData) {
       let studentHouse = document.createElement("p");
       studentHouse.innerHTML = jsonData[i].house;
       let studentAge = document.createElement("p");
-      studentAge.innerHTML = jsonData[i].yearOfBirth;
+      ageTest();
+      function ageTest() {
+        if (jsonData[i].yearOfBirth == "") {
+          studentAge.innerHTML = "unknown";
+        } else {
+          studentAge.innerHTML = 2022 - jsonData[i].yearOfBirth;
+        }
+      }
 
       studentCard.append(studentImg, studentName, studentHouse, studentAge);
       gryffindorDiv.append(studentCard);
@@ -67,7 +74,14 @@ function addStudentsSlytherin(jsonData) {
       let studentHouse = document.createElement("p");
       studentHouse.innerHTML = jsonData[i].house;
       let studentAge = document.createElement("p");
-      studentAge.innerHTML = jsonData[i].yearOfBirth;
+      ageTest();
+      function ageTest() {
+        if (jsonData[i].yearOfBirth == "") {
+          studentAge.innerHTML = "unknown";
+        } else {
+          studentAge.innerHTML = 2022 - jsonData[i].yearOfBirth;
+        }
+      }
 
       studentCard.append(studentImg, studentName, studentHouse, studentAge);
       slytherinDiv.append(studentCard);
@@ -104,7 +118,14 @@ function addStudentsRavenclaw(jsonData) {
       let studentHouse = document.createElement("p");
       studentHouse.innerHTML = jsonData[i].house;
       let studentAge = document.createElement("p");
-      studentAge.innerHTML = jsonData[i].yearOfBirth;
+      ageTest();
+      function ageTest() {
+        if (jsonData[i].yearOfBirth == "") {
+          studentAge.innerHTML = "unknown";
+        } else {
+          studentAge.innerHTML = 2022 - jsonData[i].yearOfBirth;
+        }
+      }
 
       studentCard.append(studentImg, studentName, studentHouse, studentAge);
       ravenclawDiv.append(studentCard);
@@ -141,7 +162,14 @@ function addStudentsHufflepuff(jsonData) {
       let studentHouse = document.createElement("p");
       studentHouse.innerHTML = jsonData[i].house;
       let studentAge = document.createElement("p");
-      studentAge.innerHTML = jsonData[i].yearOfBirth;
+      ageTest();
+      function ageTest() {
+        if (jsonData[i].yearOfBirth == "") {
+          studentAge.innerHTML = "unknown";
+        } else {
+          studentAge.innerHTML = 2022 - jsonData[i].yearOfBirth;
+        }
+      }
 
       studentCard.append(studentImg, studentName, studentHouse, studentAge);
       hufflepuffDiv.append(studentCard);
