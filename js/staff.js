@@ -53,17 +53,25 @@ function addStaff() {
   let inputPatronus = document.getElementById("select-patronus").value;
   let result = document.getElementById("select").value;
 
+  // Printer selvom inputfeltene er tomme.
   if ((inputName, inputPatronus === "")) {
     alert("Feltene over kan ikke være tomme");
-  } else {
-    addedStaffArray.push({
-      name: inputName,
-      patronus: inputPatronus,
-      house: result,
-    });
-    addedStaffCards();
-  }
+  } else if (checkUserAnswer) {
+    areYouSure = prompt("Do you wish to create?");
+  } else areYouSure === "yes";
+  addedStaffArray.push({
+    name: inputName,
+    patronus: inputPatronus,
+    house: result,
+  });
+
+  addedStaffCards();
 }
+
+function checkUserAnswer() {
+  let areYouSure = prompt("Do you wish to create?");
+}
+
 function addedStaffCards() {
   let newStaffCardsInfo = "";
   for (let i = 0; i < addedStaffArray.length; i++) {
