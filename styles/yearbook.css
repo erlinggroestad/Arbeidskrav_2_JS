@@ -2,31 +2,4 @@
   padding: 0;
   margin: 0;
 }
-.house__gryffindor {
-  background-image: url(/images/gryffindor.png);
-  height: 300px;
-  width: 240px;
-  background-repeat: no-repeat, repeat;
-  background-size: cover;
-}
-.house__slytherin {
-  background-image: url(/images/slytherin.png);
-  height: 300px;
-  width: 240px;
-  background-repeat: no-repeat, repeat;
-  background-size: cover;
-}
-.house__ravenclaw {
-  background-image: url(/images/ravenclaw.png);
-  height: 300px;
-  width: 240px;
-  background-repeat: no-repeat, repeat;
-  background-size: cover;
-}
-.house__hufflepuff {
-  background-image: url(/images/hufflepuff.png);
-  height: 300px;
-  width: 240px;
-  background-repeat: no-repeat, repeat;
-  background-size: cover;
-}
+
