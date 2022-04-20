@@ -14,9 +14,26 @@ gryffindorImg.addEventListener("click", () =>
   )
 );
 function addStudentsGryffindor(jsonData) {
+  let studentsDiv = document.getElementById("students-div");
+  studentsDiv.innerHTML = "";
   for (let i = 0; i < jsonData.length; i++) {
     if (jsonData[i].house == "Gryffindor") {
-      console.log(jsonData[i]);
+      let studentCard = document.createElement("div");
+      let studentImg = document.createElement("img");
+      studentImg.src = jsonData[i].image;
+      studentImg.addEventListener("error", errorImage);
+      function errorImage() {
+        studentImg.src = "/images/wizard.png";
+      }
+      let studentName = document.createElement("h3");
+      studentName.innerHTML = jsonData[i].name;
+      let studentHouse = document.createElement("p");
+      studentHouse.innerHTML = jsonData[i].house;
+      let studentAge = document.createElement("p");
+      studentAge.innerHTML = jsonData[i].yearOfBirth;
+
+      studentCard.append(studentImg, studentName, studentHouse, studentAge);
+      studentsDiv.append(studentCard);
     } else {
       console.log("nothing happens");
     }
