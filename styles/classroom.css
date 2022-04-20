@@ -1,7 +1,3 @@
-* {
-  padding: 0;
-  margin: 0;
-}
 body {
   background-image: url(/images/classroomBackground.jpg);
   background-size: cover;
@@ -9,10 +5,10 @@ body {
   background-position-x: center;
   color: snow;
   background-color: burlywood;
-
   text-align: center;
   height: 2500px;
 }
+
 .snape__container {
   width: auto;
   text-align: center;
@@ -38,20 +34,19 @@ body {
 .professor__snape__img:hover {
   opacity: 80%;
 }
-.snape__info{
-    font-size: 24px;
-    padding: 20px;
+.snape__info {
+  font-size: 24px;
+  padding: 20px;
 }
-.start__button{
-    padding: 10px;
-    font-size: 24px;
+.start__button {
+  padding: 10px;
+  font-size: 24px;
 }
 
 img {
   width: 250px;
   height: 313px;
   border-radius: 30px;
-  
 }
 .students__container {
   display: flex;
@@ -63,7 +58,7 @@ img {
   padding-top: 50px;
 }
 
-.students__container div{
-    border-radius: 20px;
-    width: 20%;
+.students__container div {
+  border-radius: 20px;
+  width: 20%;
 }
