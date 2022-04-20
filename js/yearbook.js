@@ -9,11 +9,11 @@ async function getHpApi(url) {
 gryffindorImg.addEventListener("click", () =>
   getHpApi("http://hp-api.herokuapp.com/api/characters/students").then(
     (jsonData) => {
-      showStudentsGryffindor(jsonData);
+      addStudentsGryffindor(jsonData);
     }
   )
 );
-function showStudentsGryffindor(jsonData) {
+function addStudentsGryffindor(jsonData) {
   for (let i = 0; i < jsonData.length; i++) {
     if (jsonData[i].house == "Gryffindor") {
       console.log(jsonData[i]);
@@ -29,11 +29,11 @@ let slytherinImg = document.getElementById("slytherin-img");
 slytherinImg.addEventListener("click", () =>
   getHpApi("http://hp-api.herokuapp.com/api/characters/students").then(
     (jsonData) => {
-      showStudentsSlytherin(jsonData);
+      addStudentsSlytherin(jsonData);
     }
   )
 );
-function showStudentsSlytherin(jsonData) {
+function addStudentsSlytherin(jsonData) {
   for (let i = 0; i < jsonData.length; i++) {
     if (jsonData[i].house == "Slytherin") {
       console.log(jsonData[i]);
@@ -49,11 +49,11 @@ let ravenclawImg = document.getElementById("ravenclaw-img");
 ravenclawImg.addEventListener("click", () =>
   getHpApi("http://hp-api.herokuapp.com/api/characters/students").then(
     (jsonData) => {
-      showStudentsRavenclaw(jsonData);
+      addStudentsRavenclaw(jsonData);
     }
   )
 );
-function showStudentsRavenclaw(jsonData) {
+function addStudentsRavenclaw(jsonData) {
   for (let i = 0; i < jsonData.length; i++) {
     if (jsonData[i].house == "Ravenclaw") {
       console.log(jsonData[i]);
@@ -69,11 +69,11 @@ let hufflepuffImg = document.getElementById("hufflepuff-img");
 hufflepuffImg.addEventListener("click", () =>
   getHpApi("http://hp-api.herokuapp.com/api/characters/students").then(
     (jsonData) => {
-      showStudentsHufflepuff(jsonData);
+      addStudentsHufflepuff(jsonData);
     }
   )
 );
-function showStudentsHufflepuff(jsonData) {
+function addStudentsHufflepuff(jsonData) {
   for (let i = 0; i < jsonData.length; i++) {
     if (jsonData[i].house == "Hufflepuff") {
       console.log(jsonData[i]);
