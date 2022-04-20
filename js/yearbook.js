@@ -14,8 +14,8 @@ gryffindorImg.addEventListener("click", () =>
   )
 );
 function addStudentsGryffindor(jsonData) {
-  let studentsDiv = document.getElementById("students-div");
-  studentsDiv.innerHTML = "";
+  let gryffindorDiv = document.getElementById("gryffindor-div");
+  gryffindorDiv.innerHTML = "";
   for (let i = 0; i < jsonData.length; i++) {
     if (jsonData[i].house == "Gryffindor") {
       let studentCard = document.createElement("div");
@@ -30,10 +30,17 @@ function addStudentsGryffindor(jsonData) {
       let studentHouse = document.createElement("p");
       studentHouse.innerHTML = jsonData[i].house;
       let studentAge = document.createElement("p");
-      studentAge.innerHTML = jsonData[i].yearOfBirth;
+      ageTest();
+      function ageTest() {
+        if (jsonData[i].yearOfBirth == "") {
+          studentAge.innerHTML = "unknown";
+        } else {
+          studentAge.innerHTML = 2022 - jsonData[i].yearOfBirth;
+        }
+      }
 
       studentCard.append(studentImg, studentName, studentHouse, studentAge);
-      studentsDiv.append(studentCard);
+      gryffindorDiv.append(studentCard);
     } else {
       console.log("nothing happens");
     }
@@ -51,9 +58,33 @@ slytherinImg.addEventListener("click", () =>
   )
 );
 function addStudentsSlytherin(jsonData) {
+  let slytherinDiv = document.getElementById("slytherin-div");
+  slytherinDiv.innerHTML = "";
   for (let i = 0; i < jsonData.length; i++) {
     if (jsonData[i].house == "Slytherin") {
-      console.log(jsonData[i]);
+      let studentCard = document.createElement("div");
+      let studentImg = document.createElement("img");
+      studentImg.src = jsonData[i].image;
+      studentImg.addEventListener("error", errorImage);
+      function errorImage() {
+        studentImg.src = "/images/wizard.png";
+      }
+      let studentName = document.createElement("h3");
+      studentName.innerHTML = jsonData[i].name;
+      let studentHouse = document.createElement("p");
+      studentHouse.innerHTML = jsonData[i].house;
+      let studentAge = document.createElement("p");
+      ageTest();
+      function ageTest() {
+        if (jsonData[i].yearOfBirth == "") {
+          studentAge.innerHTML = "unknown";
+        } else {
+          studentAge.innerHTML = 2022 - jsonData[i].yearOfBirth;
+        }
+      }
+
+      studentCard.append(studentImg, studentName, studentHouse, studentAge);
+      slytherinDiv.append(studentCard);
     } else {
       console.log("nothing happens");
     }
@@ -71,9 +102,33 @@ ravenclawImg.addEventListener("click", () =>
   )
 );
 function addStudentsRavenclaw(jsonData) {
+  let ravenclawDiv = document.getElementById("ravenclaw-div");
+  ravenclawDiv.innerHTML = "";
   for (let i = 0; i < jsonData.length; i++) {
     if (jsonData[i].house == "Ravenclaw") {
-      console.log(jsonData[i]);
+      let studentCard = document.createElement("div");
+      let studentImg = document.createElement("img");
+      studentImg.src = jsonData[i].image;
+      studentImg.addEventListener("error", errorImage);
+      function errorImage() {
+        studentImg.src = "/images/wizard.png";
+      }
+      let studentName = document.createElement("h3");
+      studentName.innerHTML = jsonData[i].name;
+      let studentHouse = document.createElement("p");
+      studentHouse.innerHTML = jsonData[i].house;
+      let studentAge = document.createElement("p");
+      ageTest();
+      function ageTest() {
+        if (jsonData[i].yearOfBirth == "") {
+          studentAge.innerHTML = "unknown";
+        } else {
+          studentAge.innerHTML = 2022 - jsonData[i].yearOfBirth;
+        }
+      }
+
+      studentCard.append(studentImg, studentName, studentHouse, studentAge);
+      ravenclawDiv.append(studentCard);
     } else {
       console.log("nothing happens");
     }
@@ -91,9 +146,33 @@ hufflepuffImg.addEventListener("click", () =>
   )
 );
 function addStudentsHufflepuff(jsonData) {
+  let hufflepuffDiv = document.getElementById("hufflepuff-div");
+  hufflepuffDiv.innerHTML = "";
   for (let i = 0; i < jsonData.length; i++) {
     if (jsonData[i].house == "Hufflepuff") {
-      console.log(jsonData[i]);
+      let studentCard = document.createElement("div");
+      let studentImg = document.createElement("img");
+      studentImg.src = jsonData[i].image;
+      studentImg.addEventListener("error", errorImage);
+      function errorImage() {
+        studentImg.src = "/images/wizard.png";
+      }
+      let studentName = document.createElement("h3");
+      studentName.innerHTML = jsonData[i].name;
+      let studentHouse = document.createElement("p");
+      studentHouse.innerHTML = jsonData[i].house;
+      let studentAge = document.createElement("p");
+      ageTest();
+      function ageTest() {
+        if (jsonData[i].yearOfBirth == "") {
+          studentAge.innerHTML = "unknown";
+        } else {
+          studentAge.innerHTML = 2022 - jsonData[i].yearOfBirth;
+        }
+      }
+
+      studentCard.append(studentImg, studentName, studentHouse, studentAge);
+      hufflepuffDiv.append(studentCard);
     } else {
       console.log("nothing happens");
     }

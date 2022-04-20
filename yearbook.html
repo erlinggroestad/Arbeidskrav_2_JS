@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yearbook</title>
     <link rel="stylesheet" href="/styles/yearbook.css" />
-    <link rel="stylesheet" href="/styles/general.css">
+    <link rel="stylesheet" href="/styles/general.css" />
   </head>
   <body>
-   <div class="nav__buttons__wrapper">
+    <div class="nav__buttons__wrapper">
       <button class="nav__buttons" onclick="document.location='/index.html'">
         Startpage
       </button>
@@ -19,7 +19,10 @@
       <button class="nav__buttons" onclick="document.location='/staff.html'">
         Staff
       </button>
-      <button class="nav__buttons" onclick="document.location='/classroom.html'">
+      <button
+        class="nav__buttons"
+        onclick="document.location='/classroom.html'"
+      >
         Class
       </button>
     </div>
@@ -30,7 +33,7 @@
           src="images/gryffindor.png"
           alt="picture of house gryffindors crest"
         />
-        <div id="students-div" class="students__container"></div>
+        <div id="gryffindor-div" class="gryffindor__div"></div>
       </div>
       <div id="house-slytherin" class="house__slytherin">
         <img
@@ -38,6 +41,7 @@
           src="images/slytherin.png"
           alt="picture of house slytherins crest"
         />
+        <div id="slytherin-div" class="slytherin__div"></div>
       </div>
       <div id="house-ravenclaw" class="house__ravenclaw">
         <img
@@ -45,6 +49,7 @@
           src="images/ravenclaw.png"
           alt="picture of house ravenclaws crest"
         />
+        <div id="ravenclaw-div" class="ravenclaw__div"></div>
       </div>
       <div id="house-hufflepuff" class="house__hufflepuff">
         <img
@@ -52,6 +57,7 @@
           src="images/hufflepuff.png"
           alt="picture of house hufflepuffs crest"
         />
+        <div id="hufflepuff-div" class="hufflepuff__div"></div>
       </div>
     </div>
     <script src="/js/yearbook.js"></script>
