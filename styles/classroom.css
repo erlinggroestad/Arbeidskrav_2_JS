@@ -8,8 +8,10 @@ body {
   background-repeat: no-repeat;
   background-position-x: center;
   color: snow;
+  background-color: burlywood;
 
   text-align: center;
+  height: 2500px;
 }
 .snape__container {
   width: auto;
@@ -57,7 +59,7 @@ img {
   flex-wrap: wrap;
   gap: 50px;
   width: 100%;
-  color: white;
+  color: black;
   padding-top: 50px;
 }
 
