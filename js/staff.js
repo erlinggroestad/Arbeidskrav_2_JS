@@ -19,17 +19,17 @@ fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
         <button type="submit" id="edit-button" onclick="editFunc(${i})">Edit</button>
         <button type="submit" id="end-editing">Done</button> <br>
  
-        <button onclick="deleteStaff(${i})"> Delete me </button> <br>
+        <button onclick="deleteStaff1(${i})"> Delete me </button> <br>
         <img id="staff-img" src="${
           jsonData[i].image
         }" alt="" onerror="this.src='/images/wizard.png'" /> <br>
 
         <div id="staff-text-info" <br>
-        Name: <div id=${`staff-name-` + jsonData[i].name} >    ${
-          jsonData[i].name
-        }</div>
+        Name: <div id="staff-name">    ${jsonData[i].name}</div>
         House: <div id="staff-house">   ${jsonData[i].house}</div>
-        Patronus: <div id="patronus"> ${jsonData[i].patronus}</div>
+        <div id="patronus">Patronus:<div id="change__patronus">${
+          jsonData[i].patronus
+        }</div>
         </div></li>`;
       }
       document.getElementById("staff-cards").innerHTML = staffCardsInfo;
@@ -37,10 +37,11 @@ fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
     }
   )
 );
-function deleteStaff(i) {
+function deleteStaff1(i) {
   let confirmDelete = prompt("Are you sure you want too delete? yes/no");
   if (confirmDelete == "yes") {
     jsonData.splice(i, 1);
+    addStaff();
   }
 }
 
@@ -62,15 +63,15 @@ function addStaff() {
     });
     addedStaffCards();
   }
-
-  function addedStaffCards() {
-    let newStaffCardsInfo = "";
-    for (let i = 0; i < addedStaffArray.length; i++) {
-      newStaffCardsInfo += `<li class="cards" id="${
-        `House-` + addedStaffArray[i].house
-      }">
+}
+function addedStaffCards() {
+  let newStaffCardsInfo = "";
+  for (let i = 0; i < addedStaffArray.length; i++) {
+    newStaffCardsInfo += `<li class="cards" id="${
+      `House-` + addedStaffArray[i].house
+    }">
         <div id="cards__container">
-        <button type="submit" id="edit-button">Edit</button>
+        <button type="submit" id="edit-button" onclick="editFunc(${i})">Edit</button>
         <button type="submit" id="end-editing">Done</button><br>
 
         <button onclick="deleteStaff(${i})"> Delete me </button> <br>
@@ -79,17 +80,28 @@ function addStaff() {
         <div id="staff-text-info" <br>
         Name: <div id="staff-name">    ${addedStaffArray[i].name}</div>
         House: <div id="staff-house">   ${addedStaffArray[i].house}</div>
-        Patronus: <div id="patronus"> ${addedStaffArray[i].patronus}</div>
+        <div id="patronus">Patronus:<div id="change__patronus">  ${
+          addedStaffArray[i].patronus
+        }</div>
         </div></li>`;
-    }
-    document.getElementById("staff-cards").innerHTML = newStaffCardsInfo;
+  }
+
+  document.getElementById("staff-cards").innerHTML = newStaffCardsInfo;
+}
+function deleteStaff(i) {
+  let confirmDelete = prompt("Are you sure you want too delete? yes/no");
+  if (confirmDelete == "yes") {
+    addedStaffArray.splice(i, 1);
+    addedStaffCards();
   }
 }
+
+console.log(addedStaffArray);
 
 function editFunc() {
   const editStaffName = document.getElementById("staff-name");
   const editStaffHouse = document.getElementById("staff-house");
-  const editStaffPatronus = document.getElementById("patronus");
+  const editStaffPatronus = document.getElementById("change__patronus");
 
   const edit_button = document.getElementById("edit-button");
   const end_button = document.getElementById("end-editing");
@@ -114,15 +126,7 @@ function editFunc() {
     editStaffPatronus.style.backgroundColor = null;
   });
 }
-function deleteStaff(i) {
-  let confirmDelete = prompt("Are you sure you want too delete? yes/no");
-  if (confirmDelete == "yes") {
-    addedStaffArray.splice(i, 1);
-  }
-}
-
-console.log(addedStaffArray);
 
 // Edit funker bare på første cardet, i cardsa fra apiet og de man lager.
-// Splice sletter fra addedstaffarrayet men kun første posisjonen... selvom skrevet i, 1
+// Splice sletter fra addedstaffarrayet
 // Må få til å legge nye staff etter de fra API
