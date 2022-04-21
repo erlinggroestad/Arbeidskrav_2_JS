@@ -32,14 +32,31 @@ function addStudentsGryffindor(jsonData) {
       let studentAge = document.createElement("p");
       ageTest();
       function ageTest() {
-        if (jsonData[i].yearOfBirth == "") {
+        if (jsonData[i].alive == false) {
+          console.log("no age is shown cause of death");
+        } else if (jsonData[i].yearOfBirth == "") {
           studentAge.innerHTML = "unknown";
         } else {
           studentAge.innerHTML = 2022 - jsonData[i].yearOfBirth;
         }
       }
-
-      studentCard.append(studentImg, studentName, studentHouse, studentAge);
+      let studentAlive = document.createElement("p");
+      aliveTest();
+      function aliveTest() {
+        if (jsonData[i].alive == true) {
+          studentAlive.innerHTML = "Is alive";
+        } else {
+          console.log(jsonData[i].alive);
+          studentCard.style.color = "red";
+        }
+      }
+      studentCard.append(
+        studentImg,
+        studentName,
+        studentHouse,
+        studentAge,
+        studentAlive
+      );
       gryffindorDiv.append(studentCard);
     } else {
       console.log("nothing happens");
@@ -76,14 +93,31 @@ function addStudentsSlytherin(jsonData) {
       let studentAge = document.createElement("p");
       ageTest();
       function ageTest() {
-        if (jsonData[i].yearOfBirth == "") {
+        if (jsonData[i].alive == false) {
+          console.log("no age is shown cause of death");
+        } else if (jsonData[i].yearOfBirth == "") {
           studentAge.innerHTML = "unknown";
         } else {
           studentAge.innerHTML = 2022 - jsonData[i].yearOfBirth;
         }
       }
-
-      studentCard.append(studentImg, studentName, studentHouse, studentAge);
+      let studentAlive = document.createElement("p");
+      aliveTest();
+      function aliveTest() {
+        if (jsonData[i].alive == true) {
+          studentAlive.innerHTML = "Is alive";
+        } else {
+          console.log(jsonData[i].alive);
+          studentCard.style.color = "red";
+        }
+      }
+      studentCard.append(
+        studentImg,
+        studentName,
+        studentHouse,
+        studentAge,
+        studentAlive
+      );
       slytherinDiv.append(studentCard);
     } else {
       console.log("nothing happens");
@@ -120,14 +154,31 @@ function addStudentsRavenclaw(jsonData) {
       let studentAge = document.createElement("p");
       ageTest();
       function ageTest() {
-        if (jsonData[i].yearOfBirth == "") {
+        if (jsonData[i].alive == false) {
+          console.log("no age is shown cause of death");
+        } else if (jsonData[i].yearOfBirth == "") {
           studentAge.innerHTML = "unknown";
         } else {
           studentAge.innerHTML = 2022 - jsonData[i].yearOfBirth;
         }
       }
-
-      studentCard.append(studentImg, studentName, studentHouse, studentAge);
+      let studentAlive = document.createElement("p");
+      aliveTest();
+      function aliveTest() {
+        if (jsonData[i].alive == true) {
+          studentAlive.innerHTML = "Is alive";
+        } else {
+          console.log(jsonData[i].alive);
+          studentCard.style.color = "red";
+        }
+      }
+      studentCard.append(
+        studentImg,
+        studentName,
+        studentHouse,
+        studentAge,
+        studentAlive
+      );
       ravenclawDiv.append(studentCard);
     } else {
       console.log("nothing happens");
@@ -164,14 +215,31 @@ function addStudentsHufflepuff(jsonData) {
       let studentAge = document.createElement("p");
       ageTest();
       function ageTest() {
-        if (jsonData[i].yearOfBirth == "") {
+        if (jsonData[i].alive == false) {
+          console.log("no age is shown cause of death");
+        } else if (jsonData[i].yearOfBirth == "") {
           studentAge.innerHTML = "unknown";
         } else {
           studentAge.innerHTML = 2022 - jsonData[i].yearOfBirth;
         }
       }
-
-      studentCard.append(studentImg, studentName, studentHouse, studentAge);
+      let studentAlive = document.createElement("p");
+      aliveTest();
+      function aliveTest() {
+        if (jsonData[i].alive == true) {
+          studentAlive.innerHTML = "Is alive";
+        } else {
+          console.log(jsonData[i].alive);
+          studentCard.style.color = "red";
+        }
+      }
+      studentCard.append(
+        studentImg,
+        studentName,
+        studentHouse,
+        studentAge,
+        studentAlive
+      );
       hufflepuffDiv.append(studentCard);
     } else {
       console.log("nothing happens");
