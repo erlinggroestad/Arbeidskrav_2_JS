@@ -14,3 +14,16 @@
     height: 200px;
     width: 200px;
 }
+.user-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: .25rem;
+    margin-top: 1rem;
+}
+.card {
+    display: none;
+}
+
+.show {
+    display: inherit;
+}
