@@ -247,3 +247,47 @@ function addStudentsHufflepuff(jsonData) {
   }
 }
 
+const studentsList = document.getElementById("students-list");
+const searchBar = document.getElementById("search-bar");
+let students = [];
+
+searchBar.addEventListener("keyup", (e) => {
+  const searchString = e.target.value.toLowerCase();
+
+  const filteredStudents = students.filter((student) => {
+    return (
+      student.name.toLowerCase().includes(searchString) ||
+      student.house.toLowerCase().includes(searchString)
+    );
+  });
+  displayStudents(filteredStudents);
+});
+
+let loadStudents = async () => {
+  try {
+    let res = await fetch(
+      "http://hp-api.herokuapp.com/api/characters/students"
+    );
+    students = await res.json();
+    displayStudents(students);
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+let displayStudents = (students) => {
+  let htmlString = students
+    .map((student) => {
+      return `
+            <li class="student">
+                <h3>${student.name}</h3>
+                <p>House: ${student.house}</p>
+                <img src="${student.image}"></img>
+            </li>
+        `;
+    })
+    .join("");
+  studentsList.innerHTML = htmlString;
+};
+
+loadStudents();
