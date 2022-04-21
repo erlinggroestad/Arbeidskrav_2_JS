@@ -1,3 +1,18 @@
+let creatorBtn = document.getElementById("creator-btn");
+creatorBtn.addEventListener("click", createStudent);
+
+function createStudent() {
+  let namePrompt = prompt ("What is your name ?")
+  let studentName = namePrompt;
+  let housePrompt = prompt ("Which house do you belong in?")
+  let studentHouse = housePrompt
+  let agePrompt = prompt ("When were you born?")
+  let  studentAge = agePrompt
+  let alivePrompt = prompt ("Are you alive? true/false")
+  let studentAlive = alivePrompt
+  console.log(studentName, studentHouse, studentAge, studentAlive)
+}
+
 let houseGryffindor = document.getElementById("house-gryffindor");
 let gryffindorImg = document.getElementById("gryffindor-img");
 
