@@ -8,6 +8,11 @@ function createStudent() {
   );
   let agePrompt = prompt("When were you born?");
   let alivePrompt = prompt("Are you alive? true/false");
+  if (alivePrompt === "true") {
+    alivePrompt = true;
+  } else {
+    alivePrompt = false;
+  }
   let newStudent = {
     img: "",
     name: namePrompt,
@@ -25,6 +30,7 @@ function createStudent() {
     alert("alive true/false missing");
   } else if (newStudent.house === "Gryffindor") {
     gryffindorArray.push(newStudent);
+    console.log(newStudent);
   } else if (newStudent.house === "Slytherin") {
     slytherinArray.push(newStudent);
   } else if (newStudent.house === "Ravenclaw") {
@@ -86,7 +92,7 @@ function addStudentsGryffindor() {
       let studentAlive = document.createElement("p");
       aliveTest();
       function aliveTest() {
-        if (gryffindorArray[i].alive == true) {
+        if (gryffindorArray[i].alive === true) {
           studentAlive.innerHTML = "Is alive";
         } else {
           console.log(gryffindorArray[i].alive);
