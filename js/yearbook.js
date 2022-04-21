@@ -2,24 +2,31 @@ let creatorBtn = document.getElementById("creator-btn");
 creatorBtn.addEventListener("click", createStudent);
 
 function createStudent() {
-  let namePrompt = prompt ("What is your name ?")
-  let studentName = namePrompt;
-  let housePrompt = prompt ("Which house do you belong in?")
-  let studentHouse = housePrompt
-  let agePrompt = prompt ("When were you born?")
-  let  studentAge = agePrompt
-  let alivePrompt = prompt ("Are you alive? true/false")
-  let studentAlive = alivePrompt
-  console.log(studentName, studentHouse, studentAge, studentAlive)
+  let namePrompt = prompt("What is your name ?");
+  let housePrompt = prompt("Which house do you belong in?");
+  let agePrompt = prompt("When were you born?");
+  let alivePrompt = prompt("Are you alive? true/false");
+  let newStudent = {
+    img: "",
+    name: namePrompt,
+    house: housePrompt,
+    yearOfBirth: agePrompt,
+    alive: alivePrompt,
+  };
+  console.log(newStudent);
+  gryffindorArray.push(newStudent);
 }
 
 let houseGryffindor = document.getElementById("house-gryffindor");
 let gryffindorImg = document.getElementById("gryffindor-img");
+let gryffindorArray = [];
 
 async function getHpApi(url) {
   const infoGather = await fetch(url);
   const jsonData = await infoGather.json();
-  return jsonData;
+  jsonData.forEach((character) => {
+    gryffindorArray.push(character);
+  });
 }
 gryffindorImg.addEventListener("click", () =>
   getHpApi("http://hp-api.herokuapp.com/api/characters/students").then(
@@ -31,37 +38,37 @@ gryffindorImg.addEventListener("click", () =>
 function addStudentsGryffindor(jsonData) {
   let gryffindorDiv = document.getElementById("gryffindor-div");
   gryffindorDiv.innerHTML = "";
-  for (let i = 0; i < jsonData.length; i++) {
-    if (jsonData[i].house == "Gryffindor") {
+  for (let i = 0; i < gryffindorArray.length; i++) {
+    if (gryffindorArray[i].house == "Gryffindor") {
       let studentCard = document.createElement("div");
       let studentImg = document.createElement("img");
-      studentImg.src = jsonData[i].image;
+      studentImg.src = gryffindorArray[i].image;
       studentImg.addEventListener("error", errorImage);
       function errorImage() {
         studentImg.src = "/images/wizard.png";
       }
       let studentName = document.createElement("h3");
-      studentName.innerHTML = jsonData[i].name;
+      studentName.innerHTML = gryffindorArray[i].name;
       let studentHouse = document.createElement("p");
-      studentHouse.innerHTML = jsonData[i].house;
+      studentHouse.innerHTML = gryffindorArray[i].house;
       let studentAge = document.createElement("p");
       ageTest();
       function ageTest() {
-        if (jsonData[i].alive == false) {
+        if (gryffindorArray[i].alive == false) {
           console.log("no age is shown cause of death");
-        } else if (jsonData[i].yearOfBirth == "") {
+        } else if (gryffindorArray[i].yearOfBirth == "") {
           studentAge.innerHTML = "unknown";
         } else {
-          studentAge.innerHTML = 2022 - jsonData[i].yearOfBirth;
+          studentAge.innerHTML = 2022 - gryffindorArray[i].yearOfBirth;
         }
       }
       let studentAlive = document.createElement("p");
       aliveTest();
       function aliveTest() {
-        if (jsonData[i].alive == true) {
+        if (gryffindorArray[i].alive == true) {
           studentAlive.innerHTML = "Is alive";
         } else {
-          console.log(jsonData[i].alive);
+          console.log(gryffindorArray[i].alive);
           studentCard.style.color = "red";
         }
       }
@@ -73,6 +80,7 @@ function addStudentsGryffindor(jsonData) {
         studentAlive
       );
       gryffindorDiv.append(studentCard);
+      console.log(gryffindorArray);
     } else {
       console.log("nothing happens");
     }
