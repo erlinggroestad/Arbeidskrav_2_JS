@@ -1,3 +1,7 @@
+.all__houses{
+    display: flex;
+    justify-content: space-between;
+}
 .gryffindor__img{
     height: 200px;
     width: 200px;
@@ -26,4 +30,15 @@
 
 .show {
     display: inherit;
+}
+.students__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.students__list img{
+    height: 300px;
+    width: 300px;
+}
+ul {
+    list-style-type: none;
 }

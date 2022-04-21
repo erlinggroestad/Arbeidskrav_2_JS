@@ -280,9 +280,9 @@ let displayStudents = (students) => {
     .map((student) => {
       return `
             <li class="student">
+            <img src="${student.image}"></img>
                 <h3>${student.name}</h3>
-                <p>House: ${student.house}</p>
-                <img src="${student.image}"></img>
+                <p> ${student.house}</p>
             </li>
         `;
     })
