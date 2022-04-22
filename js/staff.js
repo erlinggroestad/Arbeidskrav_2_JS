@@ -15,8 +15,8 @@ function createStaffCards() {
   for (let i = 0; i < staffArray.length; i++) {
     staffCardsInfo += `<li class="cards" id="${`House-` + staffArray[i].house}">
         <div id="cards__container">
-        <button type="submit" id="edit-button" onclick="editFunc()">Edit</button>
-        <button type="submit" id="end-editing">Done</button> <br>
+        
+        <button  id="end-editing">Done</button> <br>
  
         <button onclick="deleteStaff(${i})"> Delete me </button> <br>
         <img id="staff-img" src="${
@@ -25,44 +25,52 @@ function createStaffCards() {
 
         <div id="staff-text-info" <br>
         Name: <div id="staff-name">    ${staffArray[i].name}</div>
+        <button  id="name-button" onclick="editName(${i})">Edit Name</button> <br
+        >
         House: <div id="staff-house"  ${staffArray[i].house}</div>
-        <div id="patronus">Patronus:<div id="change__patronus">${
+        <button  id="house-button" onclick="editHouse(${i})">Edit House</button>
+        <div id="patronus">Patronus:<div id="change-patronus">${
           staffArray[i].patronus
         }</div>
+        <button  id="patronus-button" onclick="editPatronus(${i})">Edit Patronus</button>
         </div></li>`;
   }
 
   document.getElementById("staff-cards").innerHTML = staffCardsInfo;
 }
 
-function editFunc() {
-  const editStaffName = document.getElementById("staff-name");
-  const editStaffHouse = document.getElementById("staff-house");
-  const editStaffPatronus = document.getElementById("change__patronus");
-
-  const edit_button = document.getElementById("edit-button");
-  const end_button = document.getElementById("end-editing");
-
-  edit_button.addEventListener("click", function () {
-    editStaffName.contentEditable = true;
-    editStaffHouse.contentEditable = true;
-    editStaffPatronus.contentEditable = true;
-
-    editStaffName.style.backgroundColor = "#C4A484";
-    editStaffHouse.style.backgroundColor = "#C4A484";
-    editStaffPatronus.style.backgroundColor = "#C4A484";
-  });
-
-  end_button.addEventListener("click", function () {
-    editStaffName.contentEditable = false;
-    editStaffHouse.contentEditable = false;
-    editStaffPatronus.contentEditable = false;
-
-    editStaffName.style.backgroundColor = null;
-    editStaffHouse.style.backgroundColor = null;
-    editStaffPatronus.style.backgroundColor = null;
-  });
-  console.log(edit_button);
+function editName(i) {
+  let namePrompt = prompt("Do you want to change this name? yes/no");
+  if (namePrompt == "yes") {
+    let answerPrompt = prompt("What is the new name?");
+    staffArray[i].name = answerPrompt;
+    let staffNameDiv = document.getElementById("staff-name");
+    staffNameDiv.innerHTML = answerPrompt;
+  } else {
+    console.log(i);
+  }
+}
+function editHouse(i) {
+  let housePrompt = prompt("Do you want to change this name? yes/no");
+  if (housePrompt == "yes") {
+    let answerPrompt = prompt("What is the new name?");
+    staffArray[i].house = answerPrompt;
+    let staffHouseDiv = document.getElementById("staff-house");
+    staffHouseDiv.innerHTML = answerPrompt;
+  } else {
+    console.log(i);
+  }
+}
+function editPatronus(i) {
+  let patronusPrompt = prompt("Do you want to change this name? yes/no");
+  if (patronusPrompt == "yes") {
+    let answerPrompt = prompt("What is the new name?");
+    staffArray[i].patronus = answerPrompt;
+    let staffPatronusDiv = document.getElementById("change-patronus");
+    staffPatronusDiv.innerHTML = answerPrompt;
+  } else {
+    console.log(i);
+  }
 }
 
 fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
