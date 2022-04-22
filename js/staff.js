@@ -25,7 +25,7 @@ function createStaffCards() {
 
         <div id="staff-text-info" <br>
         Name: <div id="staff-name">    ${staffArray[i].name}</div>
-        House: <div id="staff-house"  ${staffArray[i].house}</div>
+        House: <div id="staff-house">  ${staffArray[i].house}</div>
         <div id="patronus">Patronus:<div id="change__patronus">${
           staffArray[i].patronus
         }</div>
@@ -35,35 +35,35 @@ function createStaffCards() {
   document.getElementById("staff-cards").innerHTML = staffCardsInfo;
 }
 
-function editFunc() {
-  const editStaffName = document.getElementById("staff-name");
-  const editStaffHouse = document.getElementById("staff-house");
-  const editStaffPatronus = document.getElementById("change__patronus");
+// function editFunc() {
+//   const editStaffName = document.getElementById("staff-name");
+//   const editStaffHouse = document.getElementById("staff-house");
+//   const editStaffPatronus = document.getElementById("change__patronus");
 
-  const edit_button = document.getElementById("edit-button");
-  const end_button = document.getElementById("end-editing");
+//   const edit_button = document.getElementById("edit-button");
+//   const end_button = document.getElementById("end-editing");
 
-  edit_button.addEventListener("click", function () {
-    editStaffName.contentEditable = true;
-    editStaffHouse.contentEditable = true;
-    editStaffPatronus.contentEditable = true;
+//   edit_button.addEventListener("click", function () {
+//     editStaffName.contentEditable = true;
+//     editStaffHouse.contentEditable = true;
+//     editStaffPatronus.contentEditable = true;
 
-    editStaffName.style.backgroundColor = "#C4A484";
-    editStaffHouse.style.backgroundColor = "#C4A484";
-    editStaffPatronus.style.backgroundColor = "#C4A484";
-  });
+//     editStaffName.style.backgroundColor = "#C4A484";
+//     editStaffHouse.style.backgroundColor = "#C4A484";
+//     editStaffPatronus.style.backgroundColor = "#C4A484";
+//   });
 
-  end_button.addEventListener("click", function () {
-    editStaffName.contentEditable = false;
-    editStaffHouse.contentEditable = false;
-    editStaffPatronus.contentEditable = false;
+//   end_button.addEventListener("click", function () {
+//     editStaffName.contentEditable = false;
+//     editStaffHouse.contentEditable = false;
+//     editStaffPatronus.contentEditable = false;
 
-    editStaffName.style.backgroundColor = null;
-    editStaffHouse.style.backgroundColor = null;
-    editStaffPatronus.style.backgroundColor = null;
-  });
-  console.log(edit_button);
-}
+//     editStaffName.style.backgroundColor = null;
+//     editStaffHouse.style.backgroundColor = null;
+//     editStaffPatronus.style.backgroundColor = null;
+//   });
+//   console.log(edit_button);
+// }
 
 fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
   getStaffApi("http://hp-api.herokuapp.com/api/characters/staff").then(

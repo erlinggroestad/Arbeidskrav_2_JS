@@ -89,36 +89,31 @@ li:hover {
   background-position: center;
   background-size: cover;
   background-blend-mode: darken;
+}
+.house__gryffindor {
   text-align: center;
 }
-.house__gryffindor div {
-  /* padding: 20px;
-  margin-top: 20px; */
-  text-align: center;
-}
+
 #House-Slytherin {
   background-image: url(/images/slytherin.png);
   background-position: no-repeat;
   background-position: center;
   background-size: cover;
   background-blend-mode: darken;
+}
+.house__slytherin {
   text-align: center;
 }
-.house__slytherin div {
-  /* padding: 20px;
-  margin-top: 20px; */
-}
+
 #House-Hufflepuff {
   background-image: url(/images/hufflepuff.png);
   background-position: no-repeat;
   background-position: center;
   background-size: cover;
   background-blend-mode: darken;
-  text-align: center;
 }
-.house__hufflepuff div {
-  /* padding: 20px;
-  margin-top: 20px; */
+.house__hufflepuff {
+  text-align: center;
 }
 
 #House-Ravenclaw {
@@ -127,22 +122,25 @@ li:hover {
   background-position: center;
   background-size: cover;
   background-blend-mode: darken;
+}
+.house__ravenclaw {
   text-align: center;
 }
 
-.house__ravenclaw div {
-  /* padding: 20px;
-  margin-top: 20px; */
-}
 .students__house__wrapper {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 40px;
   margin: 20px;
   color: white;
+  text-shadow: 2px 1px black;
   border-radius: 10px;
   font-size: 24px;
-  height: 450px;
-  width: 350px;
+  height: 350px;
+  width: 250px;
+}
+.students__house__wrapper:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #fff;
 }
 .students__house__wrapper img {
   border-radius: 10px;
