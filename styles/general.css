@@ -1,0 +1,32 @@
+/* Her kan alt av generelle ting styles, som gjelder for alle sidene */
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: #c7c2b9;
+}
+.nav__buttons__wrapper {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  padding-bottom: 30px;
+  border-bottom: 5px solid #777674;
+}
+.nav__buttons {
+  padding: 10px;
+  width: 200px;
+  top: 30px;
+  position: relative;
+  font-size: 24px;
+  border-radius: 20px;
+  margin: 0px 50px;
+  transition: 0.1s;
+  background-color: #777674;
+  font-family: "NIGHTMARE PILLS", sans-serif;
+  color: white;
+}
+.nav__buttons:hover {
+  transform: scale(1.15);
+  background-color: #c7c2b9;
+}

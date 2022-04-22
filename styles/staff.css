@@ -1,5 +1,102 @@
-*{
-    padding: 0;
-    margin: 0;
-    background-color: red;
+img {
+  width: 150px;
+  height: 200px;
+  border-radius: 10px;
+}
+
+#staff-cards {
+  width: 100%;
+  display: grid;
+  justify-content: space-around;
+  grid-template-columns: repeat(4, auto);
+}
+.staff-cards-wrapper {
+  text-align: center;
+}
+li {
+  color: #fff;
+  font-size: 15px;
+  line-height: 25px;
+  margin: 30px;
+  text-shadow: 1px 1px black;
+  width: 250px;
+  height: 450px;
+  border: 1px solid black;
+  border-radius: 10px;
+  vertical-align: top;
+  padding: 30px;
+  transition: 0.2s;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+li button {
+  padding: 4px;
+}
+
+li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #fff;
+}
+.delete__btn {
+  margin-left: 55px;
+  margin-right: 40px;
+}
+
+.staff__patronus {
+  display: none;
+  background-color: grey;
+}
+li:hover .staff__patronus {
+  display: block;
+  text-transform: capitalize;
+}
+
+#House- {
+  background-position: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: darken;
+}
+#House-Gryffindor {
+  background-image: url(/images/gryffindor.png);
+  background-position: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: darken;
+}
+#House-Slytherin {
+  background-image: url(/images/slytherin.png);
+  background-position: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: darken;
+}
+#House-Hufflepuff {
+  background-image: url(/images/hufflepuff.png);
+  background-position: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: darken;
+}
+#House-Ravenclaw {
+  background-image: url(/images/ravenclaw.png);
+  background-position: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: darken;
+}
+
+.create-staff-form {
+  display: grid;
+  margin: 20px;
+  justify-content: center;
+  /* grid-template-areas: "name " ; */
+}
+.input {
+  padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 5px;
+}
+option {
+  font-size: 14px;
 }

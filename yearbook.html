@@ -1,14 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/styles/yearbook.css">
-</head>
-<body>
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yearbook</title>
+    <link rel="stylesheet" href="/styles/yearbook.css" />
+    <link rel="stylesheet" href="/styles/general.css" />
+    <link
+      href="http://fonts.cdnfonts.com/css/nightmare-pills"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="nav__buttons__wrapper">
+      <button class="nav__buttons" onclick="document.location='/index.html'">
+        Startpage
+      </button>
+      <button class="nav__buttons" onclick="document.location='/yearbook.html'">
+        Yearbook
+      </button>
+      <button class="nav__buttons" onclick="document.location='/staff.html'">
+        Staff
+      </button>
+      <button
+        class="nav__buttons"
+        onclick="document.location='/classroom.html'"
+      >
+        Class
+      </button>
+    </div>
+
+    <div id="student-creator" class="student__creator">
+      <button id="creator-btn" class="creator__btn">Create new student</button>
+    </div>
+    <div id="all-houses" class="all__houses">
+      <div id="house-gryffindor" class="house__gryffindor">
+        <img
+          id="gryffindor-img"
+          class="gryffindor__img"
+          src="images/gryffindor.png"
+          alt="picture of house gryffindors crest"
+        />
+        <div id="gryffindor-div" class="gryffindor__div"></div>
+      </div>
+      <div id="house-slytherin" class="house__slytherin">
+        <img
+          id="slytherin-img"
+          class="slytherin__img"
+          src="images/slytherin.png"
+          alt="picture of house slytherins crest"
+        />
+        <div id="slytherin-div" class="slytherin__div"></div>
+      </div>
+      <div id="house-ravenclaw" class="house__ravenclaw">
+        <img
+          id="ravenclaw-img"
+          class="ravenclaw__img"
+          src="images/ravenclaw.png"
+          alt="picture of house ravenclaws crest"
+        />
+        <div id="ravenclaw-div" class="ravenclaw__div"></div>
+      </div>
+      <div id="house-hufflepuff" class="house__hufflepuff">
+        <img
+          id="hufflepuff-img"
+          class="hufflepuff__img"
+          src="images/hufflepuff.png"
+          alt="picture of house hufflepuffs crest"
+        />
+        <div id="hufflepuff-div" class="hufflepuff__div"></div>
+      </div>
+    </div>
+    <div class="search__container">
+      <div id="searchWrapper">
+        <input
+          type="text"
+          name="searchBar"
+          id="search-bar"
+          placeholder="search for a character"
+        />
+      </div>
+
+      <ul id="students-list" class="students__list"></ul>
+    </div>
     <script src="/js/yearbook.js"></script>
-</body>
+  </body>
 </html>

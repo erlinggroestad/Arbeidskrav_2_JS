@@ -1,15 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Classroom</title>
-    <link rel="stylesheet" href="/styles/classroom.css">
-</head>
-<body>
-    
+    <link rel="stylesheet" href="/styles/classroom.css" />
+    <link rel="stylesheet" href="/styles/general.css">
+     <link href="http://fonts.cdnfonts.com/css/nightmare-pills" rel="stylesheet">
+  </head>
+  <body>
+ <div class="nav__buttons__wrapper">
+      <button class="nav__buttons" onclick="document.location='/index.html'">
+        Startpage
+      </button>
+      <button class="nav__buttons" onclick="document.location='/yearbook.html'">
+        Yearbook
+      </button>
+      <button class="nav__buttons" onclick="document.location='/staff.html'">
+        Staff
+      </button>
+      <button class="nav__buttons" onclick="document.location='/classroom.html'">
+        Class
+      </button>
+    </div>
+    <div id="snape-div" class="snape__container">
+      <img
+        id="professor-snape-img"
+        class="professor__snape__img"
+        src=""
+        alt=""
+      />
+      <div id="snape-info" class="snape__info"></div>
+      <div id="speech-bubble" class="speech__bubble">
+        <p>Langlock!</p>
+      </div>
+    </div>
 
+    <button id="start-button" class="start__button"></button>
+
+    <div class="students__wrapper">
+      <h1>Students attending the potion class:</h1>
+      <div id="students-div" class="students__container"></div>
+    </div>
     <script src="/js/classroom.js"></script>
-</body>
+  </body>
 </html>
