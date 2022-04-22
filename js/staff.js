@@ -188,7 +188,6 @@ function editFunc() {
     editStaffHouse.style.backgroundColor = null;
     editStaffPatronus.style.backgroundColor = null;
   });
-  console.log(edit_button);
 }
 
 function deleteStaff1(i) {

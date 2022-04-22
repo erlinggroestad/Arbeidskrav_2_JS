@@ -30,7 +30,6 @@ function createStudent() {
     alert("alive true/false missing");
   } else if (newStudent.house === "Gryffindor") {
     gryffindorArray.push(newStudent);
-    console.log(newStudent);
   } else if (newStudent.house === "Slytherin") {
     slytherinArray.push(newStudent);
   } else if (newStudent.house === "Ravenclaw") {
@@ -98,7 +97,6 @@ function addStudentsGryffindor() {
         if (gryffindorArray[i].alive === true) {
           studentAlive.innerHTML = "Is alive";
         } else {
-          console.log(gryffindorArray[i].alive);
           studentCard.style.color = "red";
         }
       }
@@ -170,7 +168,6 @@ function addStudentsSlytherin() {
         if (slytherinArray[i].alive == true) {
           studentAlive.innerHTML = "Is alive";
         } else {
-          console.log(slytherinArray[i].alive);
           studentCard.style.color = "red";
         }
       }
@@ -242,7 +239,6 @@ function addStudentsRavenclaw() {
         if (ravenclawArray[i].alive == true) {
           studentAlive.innerHTML = "Is alive";
         } else {
-          console.log(ravenclawArray[i].alive);
           studentCard.style.color = "red";
         }
       }
@@ -314,7 +310,6 @@ function addStudentsHufflepuff() {
         if (hufflepuffArray[i].alive == true) {
           studentAlive.innerHTML = "Is alive";
         } else {
-          console.log(hufflepuffArray[i].alive);
           studentCard.style.color = "red";
         }
       }
