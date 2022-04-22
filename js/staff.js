@@ -58,8 +58,8 @@ function createStaffCards() {
       nameBtn,
       staffHouse,
       houseBtn,
-      staffPatronus,
-      patronusBtn
+      patronusBtn,
+      staffPatronus
     );
     cards.append(deleteBtn, staffImg, staffTextInfo);
     staffCardUl.append(cards);
