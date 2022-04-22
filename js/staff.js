@@ -15,9 +15,10 @@ function createStaffCards() {
   staffCardUl.innerHTML = "";
   for (let i = 0; i < staffArray.length; i++) {
     let cards = document.createElement("li");
-    cards.setAttribute = ("id", "staffArray[i].house");
+    cards.setAttribute("id", `House-` + staffArray[i].house);
     cards.setAttribute = ("class", "cards");
     let deleteBtn = document.createElement("button");
+    deleteBtn.setAttribute("class", "delete__btn")
     deleteBtn.addEventListener("click", () => {
       deleteStaff(i);
     });

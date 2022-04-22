@@ -30,6 +30,16 @@ li {
   transition: 0.2s;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+li {
+  display: grid;
+  grid-template-rows: 20px 1fr 1fr;
+}
+li img{
+  position: relative;
+  left: 15%;
+}
+
 li:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px #fff;
