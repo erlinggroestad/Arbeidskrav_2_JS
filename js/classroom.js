@@ -57,14 +57,14 @@ function makeStudents() {
   visableStudents = [];
   for (i = 0; i < 10; i++) {
     let randNum = Math.floor(Math.random() * studentsArray.length);
-    console.log(randNum, "makestudentsForLoop");
+    
     visableStudents.push(studentsArray[randNum]);
   }
   showStudents(visableStudents);
 }
 
 function showStudents(visableStudents) {
-  console.log(visableStudents, "showStudentsCLG");
+  
   let studentsDiv = document.getElementById("students-div");
   studentsDiv.innerHTML = "";
   for (i = 0; i < visableStudents.length; i++) {
@@ -92,7 +92,7 @@ function showStudents(visableStudents) {
       });
       studentCard.append(studentImg, studentName, studentHouse, deleteBtn);
       studentsDiv.append(studentCard);
-      console.log(i, "each random student from array");
+      
     }
   }
 }
@@ -101,10 +101,9 @@ function deleteStudent(ii, visableStudents) {
   var areYouSure = prompt("Are you sure? yes/no ");
   if (areYouSure == "yes") {
     visableStudents.splice(ii, 1);
-    console.log(visableStudents, "delete blir utført");
-    console.log(ii);
+    
     let randNum = Math.floor(Math.random() * studentsArray.length);
-    console.log(randNum, "makestudentsForLoop");
+    
     visableStudents.push(studentsArray[randNum]);
     showStudents(visableStudents);
   } else {
