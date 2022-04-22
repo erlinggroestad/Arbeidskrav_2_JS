@@ -69,6 +69,7 @@ function addStudentsGryffindor() {
     if (gryffindorArray[i].house == "Gryffindor") {
       let studentCard = document.createElement("div");
       studentCard.setAttribute("id", `House-` + gryffindorArray[i].house);
+      studentCard.setAttribute("class", "students__house__wrapper");
 
       let studentImg = document.createElement("img");
       studentImg.src = gryffindorArray[i].image;
@@ -141,7 +142,7 @@ function addStudentsSlytherin() {
     if (slytherinArray[i].house == "Slytherin") {
       let studentCard = document.createElement("div");
       studentCard.setAttribute("id", `House-` + slytherinArray[i].house);
-
+      studentCard.setAttribute("class", "students__house__wrapper");
       let studentImg = document.createElement("img");
       studentImg.src = slytherinArray[i].image;
       studentImg.addEventListener("error", errorImage);
@@ -213,6 +214,7 @@ function addStudentsRavenclaw() {
     if (ravenclawArray[i].house == "Ravenclaw") {
       let studentCard = document.createElement("div");
       studentCard.setAttribute("id", `House-` + ravenclawArray[i].house);
+      studentCard.setAttribute("class", "students__house__wrapper");
       let studentImg = document.createElement("img");
       studentImg.src = ravenclawArray[i].image;
       studentImg.addEventListener("error", errorImage);
@@ -284,6 +286,7 @@ function addStudentsHufflepuff() {
     if (hufflepuffArray[i].house == "Hufflepuff") {
       let studentCard = document.createElement("div");
       studentCard.setAttribute("id", `House-` + hufflepuffArray[i].house);
+      studentCard.setAttribute("class", "students__house__wrapper");
       let studentImg = document.createElement("img");
       studentImg.src = hufflepuffArray[i].image;
       studentImg.addEventListener("error", errorImage);
