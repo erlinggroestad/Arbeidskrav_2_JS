@@ -11,11 +11,12 @@ img {
   font-size: 24px;
   border-radius: 10px;
   margin: 50px;
-  background-color: rgba(244, 225, 82, 0.744);
+  background-color: #777674;
+  transition: 0.2s;
 }
 .creator__btn:hover {
-  transform: scale(1.15);
-  background-color: rgb(244, 225, 82);
+  transform: scale(1.05);
+  background-color: #c7c2b9;
 }
 
 .all__houses {
@@ -46,6 +47,7 @@ img {
   padding: 20px 50px;
   font-size: 24px;
   border-radius: 10px;
+  background-color: #eaeaea;
 }
 
 .students__list {

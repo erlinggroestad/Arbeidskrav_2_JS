@@ -11,26 +11,12 @@ async function getStaffApi(url) {
   });
 }
 function createStaffCards() {
-  let staffCardUl = document.getElementById("staff-cards")
+  let staffCardUl = document.getElementById("staff-cards");
   let staffCardsInfo = "";
   for (let i = 0; i < staffArray.length; i++) {
     // staffCardsInfo += `<li class="cards" id="${`House-` + staffArray[i].house}">
     //     <div id="cards__container">
- 
-<<<<<<< HEAD
-        <button onclick="deleteStaff(${i})"> Delete me </button> <br>
-        <img id="staff-img" src="${
-          staffArray[i].image
-        }" alt="" onerror="this.src='/images/wizard.png'" /> <br>
 
-        <div id="staff-text-info" <br>
-        Name: <div id="staff-name">    ${staffArray[i].name}</div>
-        House: <div id="staff-house">  ${staffArray[i].house}</div>
-        <div id="patronus">Patronus:<div id="change__patronus">${
-          staffArray[i].patronus
-        }</div>
-        </div></li>`;
-=======
     //     <button onclick="deleteStaff(${i})"> Delete me </button> <br>
     //     <img id="staff-img" src="${
     //       staffArray[i].image
@@ -48,81 +34,64 @@ function createStaffCards() {
     //     <button  id="patronus-button" onclick="editPatronus(${i})">Edit Patronus</button>
     //     </div></li>`;
 
-let cards = document.createElement("li");
-cards.setAttribute = ("id", "staffArray[i].house");
-let deleteBtn = document.createElement("button");
-deleteBtn.addEventListener("click",() =>  {deleteStaff(i)});
-deleteBtn.innerHTML = "Delete"
-let staffImg = document.createElement("img");
-staffImg.src = staffArray[i].image;
-staffImg.addEventListener("error", errorImage);
-function errorImage() {
-  staffImg.src = "/images/wizard.png";
-}
-let staffTextInfo = document.createElement("div");
-let staffName = document.createElement("div");
-staffName.innerHTML = staffArray[i].name;
-let nameBtn = document.createElement("button");
-nameBtn.addEventListener("click", () => {editName(i, staffName, staffHouse, staffPatronus);});
-nameBtn.innerHTML = "Change name"
-let staffHouse = document.createElement("div");
-staffHouse.innerHTML = staffArray[i].house;
-let houseBtn = document.createElement("button");
-houseBtn.addEventListener("click",() =>  {editHouse(i, staffName, staffHouse, staffPatronus);});
-houseBtn.innerHTML = "Change house"
-let staffPatronus = document.createElement("div");
-staffPatronus.innerHTML = staffArray[i].patronus;
-let patronusBtn = document.createElement("button");
-patronusBtn.addEventListener("click", () =>  {editPatronus(i, staffName, staffHouse, staffPatronus);});
-patronusBtn.innerHTML = "Change patronus"
+    let cards = document.createElement("li");
+    cards.setAttribute = ("id", "staffArray[i].house");
+    let deleteBtn = document.createElement("button");
+    deleteBtn.addEventListener("click", () => {
+      deleteStaff(i);
+    });
+    deleteBtn.innerHTML = "Delete";
+    let staffImg = document.createElement("img");
+    staffImg.src = staffArray[i].image;
+    staffImg.addEventListener("error", errorImage);
+    function errorImage() {
+      staffImg.src = "/images/wizard.png";
+    }
+    let staffTextInfo = document.createElement("div");
+    let staffName = document.createElement("div");
+    staffName.innerHTML = staffArray[i].name;
+    let nameBtn = document.createElement("button");
+    nameBtn.addEventListener("click", () => {
+      editName(i, staffName, staffHouse, staffPatronus);
+    });
+    nameBtn.innerHTML = "Change name";
+    let staffHouse = document.createElement("div");
+    staffHouse.innerHTML = staffArray[i].house;
+    let houseBtn = document.createElement("button");
+    houseBtn.addEventListener("click", () => {
+      editHouse(i, staffName, staffHouse, staffPatronus);
+    });
+    houseBtn.innerHTML = "Change house";
+    let staffPatronus = document.createElement("div");
+    staffPatronus.innerHTML = staffArray[i].patronus;
+    let patronusBtn = document.createElement("button");
+    patronusBtn.addEventListener("click", () => {
+      editPatronus(i, staffName, staffHouse, staffPatronus);
+    });
+    patronusBtn.innerHTML = "Change patronus";
 
-staffTextInfo.append(staffName, nameBtn, staffHouse, houseBtn, staffPatronus, patronusBtn)
-cards.append(deleteBtn, staffImg, staffTextInfo)
-staffCardUl.append(cards)
->>>>>>> eac1abc7e1d2b7fdc66e112ff515c0664a51e780
+    staffTextInfo.append(
+      staffName,
+      nameBtn,
+      staffHouse,
+      houseBtn,
+      staffPatronus,
+      patronusBtn
+    );
+    cards.append(deleteBtn, staffImg, staffTextInfo);
+    staffCardUl.append(cards);
   }
 }
 
-<<<<<<< HEAD
-// function editFunc() {
-//   const editStaffName = document.getElementById("staff-name");
-//   const editStaffHouse = document.getElementById("staff-house");
-//   const editStaffPatronus = document.getElementById("change__patronus");
-
-//   const edit_button = document.getElementById("edit-button");
-//   const end_button = document.getElementById("end-editing");
-
-//   edit_button.addEventListener("click", function () {
-//     editStaffName.contentEditable = true;
-//     editStaffHouse.contentEditable = true;
-//     editStaffPatronus.contentEditable = true;
-
-//     editStaffName.style.backgroundColor = "#C4A484";
-//     editStaffHouse.style.backgroundColor = "#C4A484";
-//     editStaffPatronus.style.backgroundColor = "#C4A484";
-//   });
-
-//   end_button.addEventListener("click", function () {
-//     editStaffName.contentEditable = false;
-//     editStaffHouse.contentEditable = false;
-//     editStaffPatronus.contentEditable = false;
-
-//     editStaffName.style.backgroundColor = null;
-//     editStaffHouse.style.backgroundColor = null;
-//     editStaffPatronus.style.backgroundColor = null;
-//   });
-//   console.log(edit_button);
-// }
-=======
 function editName(i, staffName, staffHouse, staffPatronus) {
   let namePrompt = prompt("Do you want to change this name? yes/no");
   if (namePrompt == "yes") {
     let answerPrompt = prompt("What is the new name?");
     staffArray[i].name = answerPrompt;
-   staffName.innerHTML = answerPrompt;
+    staffName.innerHTML = answerPrompt;
   } else {
     console.log(i);
-    console.log(staffArray[i])
+    console.log(staffArray[i]);
   }
 }
 function editHouse(i, staffName, staffHouse, staffPatronus) {
@@ -145,7 +114,6 @@ function editPatronus(i, staffName, staffHouse, staffPatronus) {
     console.log(i);
   }
 }
->>>>>>> eac1abc7e1d2b7fdc66e112ff515c0664a51e780
 
 fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
   getStaffApi("http://hp-api.herokuapp.com/api/characters/staff").then(

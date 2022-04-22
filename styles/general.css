@@ -11,7 +11,7 @@ body {
   height: 100px;
   text-align: center;
   padding-bottom: 30px;
-  border: 1px solid black;
+  border-bottom: 5px solid #777674;
 }
 .nav__buttons {
   padding: 10px;
@@ -24,6 +24,7 @@ body {
   transition: 0.1s;
   background-color: #777674;
   font-family: "NIGHTMARE PILLS", sans-serif;
+  color: white;
 }
 .nav__buttons:hover {
   transform: scale(1.15);
