@@ -12,7 +12,7 @@ async function getStaffApi(url) {
 }
 function createStaffCards() {
   let staffCardUl = document.getElementById("staff-cards");
-  let staffCardsInfo = "";
+  staffCardUl.innerHTML = "";
   for (let i = 0; i < staffArray.length; i++) {
     let cards = document.createElement("li");
     cards.setAttribute = ("id", "staffArray[i].house");
@@ -98,15 +98,6 @@ function editPatronus(i, staffName, staffHouse, staffPatronus) {
     console.log(i);
   }
 }
-
-fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
-  getStaffApi("http://hp-api.herokuapp.com/api/characters/staff").then(
-    (jsonData) => {
-      createStaffCards();
-    }
-  )
-);
-
 function deleteStaff(i) {
   let confirmDelete = prompt("Are you sure you want too delete? yes/no");
   if (confirmDelete == "yes") {
@@ -118,6 +109,13 @@ function deleteStaff(i) {
   }
   createStaffCards();
 }
+fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
+  getStaffApi("http://hp-api.herokuapp.com/api/characters/staff").then(
+    (jsonData) => {
+      createStaffCards();
+    }
+  )
+);
 
 function addStaff() {
   let inputName = document.getElementById("select-name").value;
