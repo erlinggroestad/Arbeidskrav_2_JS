@@ -35,28 +35,28 @@ body {
   opacity: 80%;
 }
 .snape__info {
-  text-shadow: 1px 1px black;
-  font-size: 24px;
-  padding: 20px;
+  text-shadow: 4px 3px black;
+  font-size: 36px;
+  padding: 30px;
 }
 
 .start__button {
-  padding: 10px;
-  font-size: 24px;
+  padding: 20px;
+  font-size: 40px;
   border-radius: 20px;
 }
-.start__button:hover{
+.start__button:hover {
   transform: scale(1.15);
 }
-.students__wrapper h1{
-    text-shadow: 1px 1px black;
-  font-size: 24px;
-  padding: 20px;
+.students__wrapper h1 {
+  text-shadow: 4px 3px black;
+  font-size: 36px;
+  padding: 30px;
 }
 
 img {
   width: 250px;
-  height: 313px;
+  height: 300px;
   border-radius: 30px;
 }
 .students__container {
@@ -72,4 +72,26 @@ img {
 .students__container div {
   border-radius: 20px;
   width: 20%;
+}
+.students__container h3 {
+  border-top: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  font-size: 30px;
+  background-color: white;
+  margin: 0px 20px;
+}
+.students__container p {
+  border-bottom: 3px solid black;
+  border-left: 3px solid black;
+  border-right: 3px solid black;
+  font-size: 30px;
+  background-color: white;
+  margin: 0px 20px;
+}
+
+.students__container button {
+  padding: 10px 20px;
+  font-size: 24px;
+  border-radius: 10px;
 }

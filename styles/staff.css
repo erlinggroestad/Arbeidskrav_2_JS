@@ -98,6 +98,9 @@ li:hover .staff__patronus {
 }
 .input {
   padding: 10px;
+  border-radius: 15px;
+  margin-bottom: 5px
+;
 }
 option {
   font-size: 14px;
