@@ -65,6 +65,40 @@ function createStaffCards() {
   }
 }
 
+function editName(i, staffName, staffHouse, staffPatronus) {
+  let namePrompt = prompt("Do you want to change this name? yes/no");
+  if (namePrompt == "yes") {
+    let answerPrompt = prompt("What is the new name?");
+    staffArray[i].name = answerPrompt;
+    staffName.innerHTML = answerPrompt;
+  } else {
+    console.log(i);
+    console.log(staffArray[i]);
+  }
+}
+
+function editHouse(i, staffName, staffHouse, staffPatronus) {
+  let housePrompt = prompt("Do you want to change this name? yes/no");
+  if (housePrompt == "yes") {
+    let answerPrompt = prompt("What is the new name?");
+    staffArray[i].house = answerPrompt;
+    staffHouse.innerHTML = answerPrompt;
+  } else {
+    console.log(i);
+  }
+}
+
+function editPatronus(i, staffName, staffHouse, staffPatronus) {
+  let patronusPrompt = prompt("Do you want to change this name? yes/no");
+  if (patronusPrompt == "yes") {
+    let answerPrompt = prompt("What is the new name?");
+    staffArray[i].patronus = answerPrompt;
+    staffPatronus.innerHTML = answerPrompt;
+  } else {
+    console.log(i);
+  }
+}
+
 fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
   getStaffApi("http://hp-api.herokuapp.com/api/characters/staff").then(
     (jsonData) => {
@@ -165,3 +199,5 @@ function deleteStaff1(i) {
   }
   addedStaffCards();
 }
+
+// Kun edit som gjenstår
