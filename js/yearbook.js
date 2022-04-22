@@ -68,6 +68,8 @@ function addStudentsGryffindor() {
   for (let i = 0; i < gryffindorArray.length; i++) {
     if (gryffindorArray[i].house == "Gryffindor") {
       let studentCard = document.createElement("div");
+      studentCard.setAttribute("id", `House-` + gryffindorArray[i].house);
+
       let studentImg = document.createElement("img");
       studentImg.src = gryffindorArray[i].image;
       studentImg.addEventListener("error", errorImage);
@@ -138,6 +140,8 @@ function addStudentsSlytherin() {
   for (let i = 0; i < slytherinArray.length; i++) {
     if (slytherinArray[i].house == "Slytherin") {
       let studentCard = document.createElement("div");
+      studentCard.setAttribute("id", `House-` + slytherinArray[i].house);
+
       let studentImg = document.createElement("img");
       studentImg.src = slytherinArray[i].image;
       studentImg.addEventListener("error", errorImage);
@@ -208,6 +212,7 @@ function addStudentsRavenclaw() {
   for (let i = 0; i < ravenclawArray.length; i++) {
     if (ravenclawArray[i].house == "Ravenclaw") {
       let studentCard = document.createElement("div");
+      studentCard.setAttribute("id", `House-` + ravenclawArray[i].house);
       let studentImg = document.createElement("img");
       studentImg.src = ravenclawArray[i].image;
       studentImg.addEventListener("error", errorImage);
@@ -278,6 +283,7 @@ function addStudentsHufflepuff() {
   for (let i = 0; i < hufflepuffArray.length; i++) {
     if (hufflepuffArray[i].house == "Hufflepuff") {
       let studentCard = document.createElement("div");
+      studentCard.setAttribute("id", `House-` + hufflepuffArray[i].house);
       let studentImg = document.createElement("img");
       studentImg.src = hufflepuffArray[i].image;
       studentImg.addEventListener("error", errorImage);
@@ -355,8 +361,10 @@ let displayStudents = (students) => {
   let htmlString = students
     .map((student) => {
       return `
-            <li class="student">
-            <img src="${student.image}"></img>
+            <li class="student" id="${`House-` + student.house}">
+            <img src="${
+              student.image
+            }"onerror="this.src='/images/wizard.png'"></img>
                 <h3>${student.name}</h3>
                 <p> ${student.house}</p>
             </li>

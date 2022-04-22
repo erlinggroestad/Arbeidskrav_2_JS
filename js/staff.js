@@ -15,7 +15,7 @@ function createStaffCards() {
   for (let i = 0; i < staffArray.length; i++) {
     staffCardsInfo += `<li class="cards" id="${`House-` + staffArray[i].house}">
         <div id="cards__container">
-        <button type="submit" id="edit-button" onclick="editFunc(${i})">Edit</button>
+        <button type="submit" id="edit-button" onclick="editFunc()">Edit</button>
         <button type="submit" id="end-editing">Done</button> <br>
  
         <button onclick="deleteStaff(${i})"> Delete me </button> <br>
@@ -25,7 +25,7 @@ function createStaffCards() {
 
         <div id="staff-text-info" <br>
         Name: <div id="staff-name">    ${staffArray[i].name}</div>
-        House: <div id="staff-house">   ${staffArray[i].house}</div>
+        House: <div id="staff-house"  ${staffArray[i].house}</div>
         <div id="patronus">Patronus:<div id="change__patronus">${
           staffArray[i].patronus
         }</div>
@@ -33,6 +33,36 @@ function createStaffCards() {
   }
 
   document.getElementById("staff-cards").innerHTML = staffCardsInfo;
+}
+
+function editFunc() {
+  const editStaffName = document.getElementById("staff-name");
+  const editStaffHouse = document.getElementById("staff-house");
+  const editStaffPatronus = document.getElementById("change__patronus");
+
+  const edit_button = document.getElementById("edit-button");
+  const end_button = document.getElementById("end-editing");
+
+  edit_button.addEventListener("click", function () {
+    editStaffName.contentEditable = true;
+    editStaffHouse.contentEditable = true;
+    editStaffPatronus.contentEditable = true;
+
+    editStaffName.style.backgroundColor = "#C4A484";
+    editStaffHouse.style.backgroundColor = "#C4A484";
+    editStaffPatronus.style.backgroundColor = "#C4A484";
+  });
+
+  end_button.addEventListener("click", function () {
+    editStaffName.contentEditable = false;
+    editStaffHouse.contentEditable = false;
+    editStaffPatronus.contentEditable = false;
+
+    editStaffName.style.backgroundColor = null;
+    editStaffHouse.style.backgroundColor = null;
+    editStaffPatronus.style.backgroundColor = null;
+  });
+  console.log(edit_button);
 }
 
 fetch("http://hp-api.herokuapp.com/api/characters/staff").then(
@@ -54,8 +84,6 @@ function deleteStaff(i) {
   }
   createStaffCards();
 }
-
-// Trenger å fikse edit på alle ansatte
 
 function addStaff() {
   let inputName = document.getElementById("select-name").value;
@@ -109,33 +137,4 @@ function deleteStaff1(i) {
   addedStaffCards();
 }
 
-// function editFunc() {
-//   const editStaffName = document.getElementById("staff-name");
-//   const editStaffHouse = document.getElementById("staff-house");
-//   const editStaffPatronus = document.getElementById("change__patronus");
-
-//   const edit_button = document.getElementById("edit-button");
-//   const end_button = document.getElementById("end-editing");
-
-//   edit_button.addEventListener("click", function () {
-//     editStaffName.contentEditable = true;
-//     editStaffHouse.contentEditable = true;
-//     editStaffPatronus.contentEditable = true;
-
-//     editStaffName.style.backgroundColor = "#C4A484";
-//     editStaffHouse.style.backgroundColor = "#C4A484";
-//     editStaffPatronus.style.backgroundColor = "#C4A484";
-//   });
-
-//   end_button.addEventListener("click", function () {
-//     editStaffName.contentEditable = false;
-//     editStaffHouse.contentEditable = false;
-//     editStaffPatronus.contentEditable = false;
-
-//     editStaffName.style.backgroundColor = null;
-//     editStaffHouse.style.backgroundColor = null;
-//     editStaffPatronus.style.backgroundColor = null;
-//   });
-// }
-
-// Edit funker bare på første cardet, i cardsa fra apiet og de man lager.
+// Kun edit som gjenstår

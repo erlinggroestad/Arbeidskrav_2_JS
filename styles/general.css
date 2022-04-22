@@ -22,8 +22,9 @@ body {
   border-radius: 20px;
   margin: 0px 50px;
   transition: 0.1s;
+  background-color: rgba(244, 225, 82, 0.744);
 }
 .nav__buttons:hover {
-  transform: scale(1.35);
-  background-color: white;
+  transform: scale(1.15);
+  background-color: rgb(244, 225, 82);
 }

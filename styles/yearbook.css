@@ -1,44 +1,136 @@
-.all__houses{
-    display: flex;
-    justify-content: space-between;
+img {
+  width: 150px;
+  height: 200px;
 }
-.gryffindor__img{
-    height: 200px;
-    width: 200px;
+.student__creator {
+  text-align: center;
 }
-.slytherin__img{
-    height: 200px;
-    width: 200px;
+.creator__btn {
+  text-align: center;
+  padding: 20px 50px;
+  font-size: 24px;
+  border-radius: 10px;
+  margin: 50px;
+  background-color: rgba(244, 225, 82, 0.744);
 }
-.ravenclaw__img{
-    height: 200px;
-    width: 200px;
-}
-.hufflepuff__img{
-    height: 200px;
-    width: 200px;
-}
-.user-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: .25rem;
-    margin-top: 1rem;
-}
-.card {
-    display: none;
+.creator__btn:hover {
+  transform: scale(1.15);
+  background-color: rgb(244, 225, 82);
 }
 
-.show {
-    display: inherit;
+.all__houses {
+  display: flex;
+  justify-content: space-around;
 }
+.gryffindor__img:hover {
+  transform: scale(1.15);
+}
+.slytherin__img:hover {
+  transform: scale(1.15);
+}
+.ravenclaw__img:hover {
+  transform: scale(1.15);
+}
+.hufflepuff__img:hover {
+  transform: scale(1.15);
+}
+
+.search__container {
+  text-align: center;
+}
+#searchWrapper {
+  padding: 20px;
+}
+#search-bar {
+  text-align: center;
+  padding: 20px 50px;
+  font-size: 24px;
+  border-radius: 10px;
+}
+
 .students__list {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+  display: grid;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-.students__list img{
-    height: 300px;
-    width: 300px;
+.students__list img {
+  width: 150px;
+  height: 200px;
+  border-radius: 10px;
+  margin: 20px;
 }
 ul {
-    list-style-type: none;
+  list-style-type: none;
+}
+li {
+  color: white;
+  text-align: center;
+  width: 250px;
+  height: 300px;
+  margin: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+}
+li:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #fff;
+}
+
+#House- {
+  /* background-image: url(/images/allhouse.png); */
+  background-position: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: darken;
+}
+#House-Gryffindor {
+  background-image: url(/images/gryffindor.png);
+  background-position: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: darken;
+  text-align: center;
+}
+.house__gryffindor div {
+  /* padding: 20px;
+  margin-top: 20px; */
+  text-align: center;
+}
+#House-Slytherin {
+  background-image: url(/images/slytherin.png);
+  background-position: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: darken;
+  text-align: center;
+}
+.house__slytherin div {
+  /* padding: 20px;
+  margin-top: 20px; */
+}
+#House-Hufflepuff {
+  background-image: url(/images/hufflepuff.png);
+  background-position: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: darken;
+  text-align: center;
+}
+.house__hufflepuff div {
+  /* padding: 20px;
+  margin-top: 20px; */
+}
+
+#House-Ravenclaw {
+  background-image: url(/images/ravenclaw.png);
+  background-position: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: darken;
+  text-align: center;
+}
+
+.house__ravenclaw div {
+  /* padding: 20px;
+  margin-top: 20px; */
 }
