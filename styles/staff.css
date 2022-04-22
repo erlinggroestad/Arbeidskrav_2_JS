@@ -14,7 +14,6 @@ img {
   text-align: center;
 }
 li {
-  
   color: #fff;
   font-size: 15px;
   line-height: 25px;
@@ -24,25 +23,23 @@ li {
   height: 450px;
   border: 1px solid black;
   border-radius: 10px;
-  display: inline-block;
   vertical-align: top;
   padding: 30px;
   transition: 0.2s;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-li {
-  display: grid;
-  grid-template-rows: 20px 1fr 1fr;
-}
-li img{
-  position: relative;
-  left: 15%;
+li button {
+  padding: 4px;
 }
 
 li:hover {
   transform: scale(1.05);
   box-shadow: 0 0 20px #fff;
+}
+.delete__btn {
+  margin-left: 55px;
+  margin-right: 40px;
 }
 
 .staff__patronus {
@@ -55,7 +52,6 @@ li:hover .staff__patronus {
 }
 
 #House- {
-  /* background-image: url(/images/allhouse.png); */
   background-position: no-repeat;
   background-position: center;
   background-size: cover;
@@ -99,8 +95,7 @@ li:hover .staff__patronus {
 .input {
   padding: 10px;
   border-radius: 15px;
-  margin-bottom: 5px
-;
+  margin-bottom: 5px;
 }
 option {
   font-size: 14px;
