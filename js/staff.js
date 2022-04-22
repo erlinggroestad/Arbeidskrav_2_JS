@@ -52,8 +52,13 @@ let cards = document.createElement("li");
 cards.setAttribute = ("id", "staffArray[i].house");
 let deleteBtn = document.createElement("button");
 deleteBtn.addEventListener("click",() =>  {deleteStaff(i)});
+deleteBtn.innerHTML = "Delete"
 let staffImg = document.createElement("img");
 staffImg.src = staffArray[i].image;
+staffImg.addEventListener("error", errorImage);
+function errorImage() {
+  staffImg.src = "/images/wizard.png";
+}
 let staffTextInfo = document.createElement("div");
 let staffName = document.createElement("div");
 staffName.innerHTML = staffArray[i].name;
