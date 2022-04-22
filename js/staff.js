@@ -27,7 +27,7 @@ function createStaffCards() {
         Name: <div id="staff-name">    ${staffArray[i].name}</div>
         <button  id="name-button" onclick="editName(${i})">Edit Name</button> <br
         >
-        House: <div id="staff-house"  ${staffArray[i].house}</div>
+        House: <div id="staff-house">  ${staffArray[i].house}</div>
         <button  id="house-button" onclick="editHouse(${i})">Edit House</button>
         <div id="patronus">Patronus:<div id="change-patronus">${
           staffArray[i].patronus
