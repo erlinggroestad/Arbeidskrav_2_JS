@@ -11,12 +11,12 @@ async function getStaffApi(url) {
   });
 }
 function createStaffCards() {
-  let staffCardUl = document.getElementById("staff-cards")
+  let staffCardUl = document.getElementById("staff-cards");
   let staffCardsInfo = "";
   for (let i = 0; i < staffArray.length; i++) {
     // staffCardsInfo += `<li class="cards" id="${`House-` + staffArray[i].house}">
     //     <div id="cards__container">
- 
+
     //     <button onclick="deleteStaff(${i})"> Delete me </button> <br>
     //     <img id="staff-img" src="${
     //       staffArray[i].image
@@ -34,37 +34,54 @@ function createStaffCards() {
     //     <button  id="patronus-button" onclick="editPatronus(${i})">Edit Patronus</button>
     //     </div></li>`;
 
-let cards = document.createElement("li");
-cards.setAttribute = ("id", "staffArray[i].house");
-let deleteBtn = document.createElement("button");
-deleteBtn.addEventListener("click",() =>  {deleteStaff(i)});
-deleteBtn.innerHTML = "Delete"
-let staffImg = document.createElement("img");
-staffImg.src = staffArray[i].image;
-staffImg.addEventListener("error", errorImage);
-function errorImage() {
-  staffImg.src = "/images/wizard.png";
-}
-let staffTextInfo = document.createElement("div");
-let staffName = document.createElement("div");
-staffName.innerHTML = staffArray[i].name;
-let nameBtn = document.createElement("button");
-nameBtn.addEventListener("click", () => {editName(i, staffName, staffHouse, staffPatronus);});
-nameBtn.innerHTML = "Change name"
-let staffHouse = document.createElement("div");
-staffHouse.innerHTML = staffArray[i].house;
-let houseBtn = document.createElement("button");
-houseBtn.addEventListener("click",() =>  {editHouse(i, staffName, staffHouse, staffPatronus);});
-houseBtn.innerHTML = "Change house"
-let staffPatronus = document.createElement("div");
-staffPatronus.innerHTML = staffArray[i].patronus;
-let patronusBtn = document.createElement("button");
-patronusBtn.addEventListener("click", () =>  {editPatronus(i, staffName, staffHouse, staffPatronus);});
-patronusBtn.innerHTML = "Change patronus"
+    let cards = document.createElement("li");
+    cards.setAttribute = ("id", "staffArray[i].house");
+    cards.setAttribute = ("class", "cards");
+    let deleteBtn = document.createElement("button");
+    deleteBtn.addEventListener("click", () => {
+      deleteStaff(i);
+    });
+    deleteBtn.innerHTML = "Delete";
+    let staffImg = document.createElement("img");
+    staffImg.src = staffArray[i].image;
+    staffImg.addEventListener("error", errorImage);
+    function errorImage() {
+      staffImg.src = "/images/wizard.png";
+    }
+    let staffTextInfo = document.createElement("div");
+    let staffName = document.createElement("div");
+    staffName.innerHTML = staffArray[i].name;
+    let nameBtn = document.createElement("button");
+    nameBtn.addEventListener("click", () => {
+      editName(i, staffName, staffHouse, staffPatronus);
+    });
+    nameBtn.innerHTML = "Change name";
+    let staffHouse = document.createElement("div");
+    staffHouse.innerHTML = staffArray[i].house;
+    let houseBtn = document.createElement("button");
+    houseBtn.addEventListener("click", () => {
+      editHouse(i, staffName, staffHouse, staffPatronus);
+    });
+    houseBtn.innerHTML = "Change house";
+    let staffPatronus = document.createElement("div");
+    staffPatronus.setAttribute("class", "staff__patronus");
+    staffPatronus.innerHTML = staffArray[i].patronus;
+    let patronusBtn = document.createElement("button");
+    patronusBtn.addEventListener("click", () => {
+      editPatronus(i, staffName, staffHouse, staffPatronus);
+    });
+    patronusBtn.innerHTML = "Change patronus";
 
-staffTextInfo.append(staffName, nameBtn, staffHouse, houseBtn, staffPatronus, patronusBtn)
-cards.append(deleteBtn, staffImg, staffTextInfo)
-staffCardUl.append(cards)
+    staffTextInfo.append(
+      staffName,
+      nameBtn,
+      staffHouse,
+      houseBtn,
+      staffPatronus,
+      patronusBtn
+    );
+    cards.append(deleteBtn, staffImg, staffTextInfo);
+    staffCardUl.append(cards);
   }
 }
 
@@ -73,10 +90,10 @@ function editName(i, staffName, staffHouse, staffPatronus) {
   if (namePrompt == "yes") {
     let answerPrompt = prompt("What is the new name?");
     staffArray[i].name = answerPrompt;
-   staffName.innerHTML = answerPrompt;
+    staffName.innerHTML = answerPrompt;
   } else {
     console.log(i);
-    console.log(staffArray[i])
+    console.log(staffArray[i]);
   }
 }
 function editHouse(i, staffName, staffHouse, staffPatronus) {

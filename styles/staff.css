@@ -35,11 +35,11 @@ li:hover {
   box-shadow: 0 0 20px #fff;
 }
 
-#patronus {
+.staff__patronus {
   display: none;
   background-color: grey;
 }
-.cards:hover #patronus {
+li:hover .staff__patronus {
   display: block;
   text-transform: capitalize;
 }
