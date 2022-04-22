@@ -1,22 +1,22 @@
 .hero__section {
-  height: 60vh;
+  height: 100%;
   border: 10px solid #89857f;
   margin-right: 10px;
   margin: 20px 200px;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
 }
 .hero__section h1 {
+  text-align: center;
   padding: 30px;
-  font-size: 100px;
+  font-size: 60px;
   font-family: "NIGHTMARE PILLS", sans-serif;
-  order: 1;
-  flex-basis: 45%;
+
 }
 .hero__section img {
-  height: 45%;
+  height: 500px ;
   padding-top: 30px;
-  order: 2;
   filter: saturate(0%);
 }
 
@@ -25,8 +25,8 @@
   font-family: "NIGHTMARE PILLS", sans-serif;
   padding-left: 50px;
   top: 10px;
-  order: 3;
   flex-basis: 55%;
+  text-align: center;
 }
 
 .hero__section__2 {
@@ -51,9 +51,6 @@
  padding-top: 250px;
   font-size: 24px;
   font-family: "NIGHTMARE PILLS", sans-serif;
-
-
-
   order: 2;
   flex-basis: 50%;
 }
