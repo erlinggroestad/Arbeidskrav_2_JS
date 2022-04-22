@@ -1,5 +1,59 @@
-body {
-  background-image: url(/images/HPbackground.webp);
-  background-repeat: no-repeat;
+.hero__section {
+  height: 60vh;
+  border: 10px solid #89857f;
+  margin-right: 10px;
+  margin: 20px 200px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.hero__section h1 {
+  padding: 30px;
+  font-size: 100px;
+  font-family: "NIGHTMARE PILLS", sans-serif;
+  order: 1;
+  flex-basis: 45%;
+}
+.hero__section img {
+  height: 45%;
+  padding-top: 30px;
+  order: 2;
+  filter: saturate(0%);
+}
+
+.hero__text {
+  font-size: 24px;
+  font-family: "NIGHTMARE PILLS", sans-serif;
+  padding-left: 50px;
+  top: 10px;
+  order: 3;
+  flex-basis: 55%;
+}
+
+.hero__section__2 {
+  padding-top: 70px;
+  height: 60vh;
   
+  margin-right: 10px;
+  margin: 20px 200px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.hero__section__2 img {
+  height: 80%;
+
+  padding: 60px;
+  order: 1;
+  filter: saturate(0%);
+  flex-basis: 30%;
+}
+
+.hero__text__2 {
+ padding-top: 250px;
+  font-size: 24px;
+  font-family: "NIGHTMARE PILLS", sans-serif;
+
+
+
+  order: 2;
+  flex-basis: 50%;
 }

@@ -14,26 +14,6 @@ function createStaffCards() {
   let staffCardUl = document.getElementById("staff-cards");
   let staffCardsInfo = "";
   for (let i = 0; i < staffArray.length; i++) {
-    // staffCardsInfo += `<li class="cards" id="${`House-` + staffArray[i].house}">
-    //     <div id="cards__container">
-
-    //     <button onclick="deleteStaff(${i})"> Delete me </button> <br>
-    //     <img id="staff-img" src="${
-    //       staffArray[i].image
-    //     }" alt="" onerror="this.src='/images/wizard.png'" /> <br>
-
-    //     <div id="staff-text-info"> <br>
-    //     Name: <div id="staff-name">    ${staffArray[i].name}</div>
-    //     <button  id="name-button" onclick="editName(${i})">Edit Name</button> <br
-    //     >
-    //     House: <div id="staff-house">  ${staffArray[i].house}</div>
-    //     <button  id="house-button" onclick="editHouse(${i})">Edit House</button>
-    //     <div id="patronus">Patronus:<div id="change-patronus">${
-    //       staffArray[i].patronus
-    //     }</div>
-    //     <button  id="patronus-button" onclick="editPatronus(${i})">Edit Patronus</button>
-    //     </div></li>`;
-
     let cards = document.createElement("li");
     cards.setAttribute = ("id", "staffArray[i].house");
     cards.setAttribute = ("class", "cards");
@@ -82,38 +62,6 @@ function createStaffCards() {
     );
     cards.append(deleteBtn, staffImg, staffTextInfo);
     staffCardUl.append(cards);
-  }
-}
-
-function editName(i, staffName, staffHouse, staffPatronus) {
-  let namePrompt = prompt("Do you want to change this name? yes/no");
-  if (namePrompt == "yes") {
-    let answerPrompt = prompt("What is the new name?");
-    staffArray[i].name = answerPrompt;
-    staffName.innerHTML = answerPrompt;
-  } else {
-    console.log(i);
-    console.log(staffArray[i]);
-  }
-}
-function editHouse(i, staffName, staffHouse, staffPatronus) {
-  let housePrompt = prompt("Do you want to change this name? yes/no");
-  if (housePrompt == "yes") {
-    let answerPrompt = prompt("What is the new name?");
-    staffArray[i].house = answerPrompt;
-    staffHouse.innerHTML = answerPrompt;
-  } else {
-    console.log(i);
-  }
-}
-function editPatronus(i, staffName, staffHouse, staffPatronus) {
-  let patronusPrompt = prompt("Do you want to change this name? yes/no");
-  if (patronusPrompt == "yes") {
-    let answerPrompt = prompt("What is the new name?");
-    staffArray[i].patronus = answerPrompt;
-    staffPatronus.innerHTML = answerPrompt;
-  } else {
-    console.log(i);
   }
 }
 
