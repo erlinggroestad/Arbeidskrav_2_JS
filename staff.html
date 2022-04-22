@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Staff</title>
     <link rel="stylesheet" href="/styles/staff.css" />
-    <link rel="stylesheet" href="/styles/general.css">
+    <link rel="stylesheet" href="/styles/general.css" />
   </head>
   <body>
-  <div class="nav__buttons__wrapper">
+    <div class="nav__buttons__wrapper">
       <button class="nav__buttons" onclick="document.location='/index.html'">
         Startpage
       </button>
@@ -19,14 +19,16 @@
       <button class="nav__buttons" onclick="document.location='/staff.html'">
         Staff
       </button>
-      <button class="nav__buttons" onclick="document.location='/classroom.html'">
+      <button
+        class="nav__buttons"
+        onclick="document.location='/classroom.html'"
+      >
         Class
       </button>
     </div>
-        
-</div>
+
     <div class="staff-cards-wrapper">
-      <h1>Staff at Hogwartz</h1>
+      <h1>Add a new staff at Hogwartz</h1>
       <div class="create-staff-form">
         <input
           class="input name"
@@ -55,10 +57,10 @@
         </button>
         <!-- Legg til default bildet på onclick -->
       </div>
+      <h1>Staff at Hogwartz</h1>
+      <ul id="new__staff__cards"></ul>
       <ul id="staff-cards"></ul>
     </div>
-    
- 
 
     <script src="/js/staff.js"></script>
   </body>
