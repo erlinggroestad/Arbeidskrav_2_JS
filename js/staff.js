@@ -128,6 +128,35 @@ function addedStaffCards() {
 
   document.getElementById("new__staff__cards").innerHTML = newStaffCardsInfo;
 }
+function editFunc() {
+  const editStaffName = document.getElementById("staff-name");
+  const editStaffHouse = document.getElementById("staff-house");
+  const editStaffPatronus = document.getElementById("change__patronus");
+
+  const edit_button = document.getElementById("edit-button");
+  const end_button = document.getElementById("end-editing");
+
+  edit_button.addEventListener("click", function () {
+    editStaffName.contentEditable = true;
+    editStaffHouse.contentEditable = true;
+    editStaffPatronus.contentEditable = true;
+
+    editStaffName.style.backgroundColor = "#C4A484";
+    editStaffHouse.style.backgroundColor = "#C4A484";
+    editStaffPatronus.style.backgroundColor = "#C4A484";
+  });
+
+  end_button.addEventListener("click", function () {
+    editStaffName.contentEditable = false;
+    editStaffHouse.contentEditable = false;
+    editStaffPatronus.contentEditable = false;
+
+    editStaffName.style.backgroundColor = null;
+    editStaffHouse.style.backgroundColor = null;
+    editStaffPatronus.style.backgroundColor = null;
+  });
+  console.log(edit_button);
+}
 
 function deleteStaff1(i) {
   let confirmDelete = prompt("Are you sure you want too delete? yes/no");
